@@ -17,5 +17,6 @@ accounts-password
 jquery
 tracker
 check
-rajit:bootstrap3-datepicker
 twbs:bootstrap
+tsega:bootstrap3-datetimepicker
+kaamodt:simple-number-spinner
