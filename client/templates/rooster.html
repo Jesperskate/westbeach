@@ -24,13 +24,13 @@
         <div class="form-line ">
                  <div class="input-group datepicker">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                <input class="set-due-date form-control" type="text"/>
+                <input class="set-due-date form-control" type="text" name="date"/>
               </div>
 
 
                  <div class="input-group timepicker">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-                <input class="set-due-date form-control" type="text"/>
+                <input class="set-due-date form-control" type="text" name="time"/>
               </div>
         </div>
         <!-- Level  -->
@@ -41,7 +41,7 @@
         <!-- Capaciteit van les -->
           <div class="form-line spinner-line">
             <span class="label-spinner">Capaciteit</span><br>
-            {{> numberSpinner min=4 max=10 value=5 id="numberSpinner"}}
+            {{> numberSpinner min=4 max=10 value=5 id="numberSpinner" name="capaciteit"}}
           </div>
          <!-- Bijzonderheden -->
           <div class="form-line ">
