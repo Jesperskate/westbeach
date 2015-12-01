@@ -41,16 +41,21 @@
         <!-- Capaciteit van les -->
           <div class="form-line spinner-line">
             <span class="label-spinner">Capaciteit</span><br>
-            {{> numberSpinner min=4 max=10 value=5 id="numberSpinner" name="capaciteit"}}
+          
+  <span class="spinner postionspinner">
+    <span class="sub">-</span>
+    <input id="numberSpinner" name="capaciteit" type="number" min="4" max="10" value="6">
+    <span class="add">+</span>
+  </span>
           </div>
          <!-- Bijzonderheden -->
           <div class="form-line ">
-            <input type="text" name="info" placeholder="Extra info" />
+            <input type="text" class="textbox" name="info" placeholder="Extra info" />
             <span class="icon-info" title="Extra informatie"></span>
           </div>
 
         <div class="form-line">
-          <button type="submit" class="submit" value="submit">Submit</button>
+          <button type="submit" class="submit" value="submit">Voeg toe</button>
         </div>
       </form>
 

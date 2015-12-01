@@ -37,7 +37,6 @@ iron:dynamic-template@0.4.1
 iron:layout@0.4.1
 iron:router@0.9.4
 jquery@1.11.4
-kaamodt:simple-number-spinner@0.0.7
 launch-screen@1.0.4
 less@2.5.1
 livedata@1.0.15

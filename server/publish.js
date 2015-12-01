@@ -15,3 +15,7 @@ Meteor.publish('todos', function(listId) {
 
   return Todos.find({listId: listId});
 });
+
+Meteor.publish('publicLessen', function() {
+  return Lessen.find();
+});

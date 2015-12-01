@@ -16,33 +16,29 @@
           In 2005 begon Kitewest met het geven van Kitesurfles. Na zoveel jaar zijn we nog steeds niet uitgekeken op deze fantastische sport. Dit enthousiasme brengen we graag op jou over! Met onze ruime ervaring ben je verzekerd van een veilig en goed opgebouwd lesprogramma. Je krijgt les volgens een veilig stappenplan wat de risico’s van de sport nihiel maakt. Al onze instructeurs zijn bovendien opgeleid en gecertificeerd.</p> -->
       <h1>Komende lessen.</h1>
           <div class="rooster">
-            <div class="kite-moment">
-              <div id="date-blue"><span id="number">27</span><br><span id="month">juni</span></div>
-              <div class="box1">
-                10:00 | gevorderde</div>
-              <div class="box2"><button>Inschrijven</button><br>
-<span>2/4</span></div>
-            </div>
-
-                        <div class="kite-moment">
-              <div id="date-blue"><span id="number">28</span><br><span id="month">juni</span></div>
-              <div class="box1">
-                10:00 | beginner</div>
-              <div class="box2"><button>Inschrijven</button><br>
-<span>0/4</span>
-              </div>
-            </div>
-
+          {{#each lessen}}
+             {{>les}}
+          {{/each}}
           </div>
       </div>
-
       <img src="/img/Kitesurf_kennismaking_Kitewest_1.png" class="img-full">
-      <img src="/img/Kitesurf_kennismaking_Kitewest_2.png" class="img-full">
-      <img src="/img/Kitesurf_kennismaking_Kitewest_3.png" class="img-full">
     </div>
 
-  </div>
-
-
-  
+  </div>  
 </template>
+
+
+<template name="les">
+              <div class="kite-moment">
+                <div id="date-blue"><span id="number">{{date}}</span><br><span id="month"></span></div>
+              <div class="box1">
+                {{starttime}}| {{level}}</div>
+              <div class="box2"><button>Inschrijven</button><br>
+                <span>2/{{capaciteit}}</span></div>
+            </div>
+            {{#if currentUser}}
+            <span class="delete">Remove</span>
+            {{/if}}
+
+
+  </template>
