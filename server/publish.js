@@ -19,3 +19,11 @@ Meteor.publish('todos', function(listId) {
 Meteor.publish('publicLessen', function() {
   return Lessen.find();
 });
+
+
+// server code
+if (Meteor.isServer) {
+
+
+
+}
