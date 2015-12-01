@@ -13,14 +13,15 @@
             {{emailLocalPart}}
           </a>
           {{#if userMenuOpen}}
-            <a  class=" btn-secondary" href="{{pathFor 'rooster'}}">Lessen</a>
+            <a  class=" btn-secondary" href="{{pathFor 'rooster'}}">Nieuwe les</a>
+            <a  class=" btn-secondary" href="{{pathFor 'planning'}}">Nieuw event</a>
             <a class="js-logout btn-secondary">Logout</a>
           {{/if}}
         </div>
       {{else}}
         <div class="btns-group">
-          <a href="{{pathFor 'signin'}}" class="btn-secondary">Sign In</a>
-          <a href="{{pathFor 'join'}}" class="btn-secondary">Join</a>
+          <a href="{{pathFor 'signin'}}" class="btn-secondary">Log In</a>
+          <a href="{{pathFor 'join'}}" class="btn-secondary">Registreer</a>
         </div>
       {{/if}}
 

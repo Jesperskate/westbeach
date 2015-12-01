@@ -9,8 +9,8 @@
     <div class="content-scrollable">
       <div class="wrapper-auth">
 
-        <h1 class="title-auth">Sign In.</h1>
-        <p class="subtitle-auth" >Signing in allows you to view private lists</p>
+        <h1 class="title-auth">Log In.</h1>
+        <p class="subtitle-auth" >Log in voor administrators.</p>
 
         <form>
           {{#if errorMessages}}
@@ -27,17 +27,17 @@
           </div>
 
           <div class="input-symbol {{errorClass 'password'}}">
-            <input type="password" name="password" placeholder="Password" />
+            <input type="password" name="password" placeholder="Wachtwoord" />
             <span class="icon-lock" title="Password"></span>
           </div>
 
-          <button type="submit" class="btn-primary">Sign in</button>
+          <button type="submit" class="btn-primary">Log in</button>
         </form>
 
         <img src="/img/Logo_Westbeach_naam_beeldmerk_explore3.jpeg" class="logo-large">
       </div>
 
-      <a href="{{pathFor 'join'}}" class="link-auth-alt">Need an account? Join Now.</a>
+      <a href="{{pathFor 'join'}}" class="link-auth-alt">NNog geen account? Registreer nu.</a>
     </div>
   </div>
 </template>
