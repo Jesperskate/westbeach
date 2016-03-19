@@ -10,9 +10,11 @@ Template.rooster.events({
     var capaciteit = event.target.capaciteit.value;
 
 
-    console.log(sport);
-    
-         // Insert a task into the collection
+    console.log("Submitvalues: "+sport, date);
+
+    // // Insert a task into the collection
+    // Meteor.call("addLes", sport);
+
       Lessen.insert({
         sport: sport,
         date: date,
@@ -21,15 +23,15 @@ Template.rooster.events({
         capaciteit:capaciteit,
         createdAt: new Date() // current time
       });
+
       event.target.sport.value = "";
       event.target.date.value = "";
       event.target.time.value = "";
       event.target.level.value = "";
 
- 
-
-
   },
+
+  // Teller functie veld
   'click .sub': function(){
       var o = $('#numberSpinner').val();
     if(o > 4){
@@ -44,8 +46,6 @@ Template.rooster.events({
       if(o < 10){
       var o = o+1;
     }
-
-
       $('#numberSpinner').val(o);
   }
 });
@@ -56,3 +56,20 @@ Template.rooster.rendered = function() {
 
 
 }
+
+Meteor.methods({
+addLes: function (text) {
+    // Make sure the user is logged in before inserting a task
+    if (! Meteor.userId()) {
+      throw new Meteor.Error("not-authorized");
+    }
+ 
+    Lessen.insert({
+      text: text,
+      createdAt: new Date(),
+      owner: Meteor.userId(),
+      username: Meteor.user().username
+    });
+  }
+
+});

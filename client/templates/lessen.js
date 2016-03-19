@@ -8,14 +8,7 @@ Template.kitesurfen.helpers({
 });
 
 
-  Template.les.events({
-    "click .delete": function () {
-    	Meteor.call("sayhello", "yesss");
-    	Meteor.call("deleteLesson", this._id);
-	      }
-  });
-
-//code for golfsurfen, werkt het?
+//code for golfsurfen
 Template.golfsurfen.helpers({
 	lessen: function(){
 		return Lessen.find({sport:'golfsurfen'});
@@ -24,18 +17,16 @@ Template.golfsurfen.helpers({
 });
 
 
+Template.les.events({
+    "click .delete": function () {
+    	Lessen.remove(this._id);
+    	// Meteor.call("deleteLesson", this._id);
+	      }
+  });
+
 
 Meteor.methods({
-  deleteLesson: function (lessonId) {
-  
-	  var message = "Are you sure you want to delete?";
-	  if ( confirm(message)){ 
-	        Lessen.remove(lessonId);
-	    };
-  },
-  sayhello: function(message){
-  	alert(message);
-  }
+
 
 });
 }
