@@ -20,15 +20,27 @@
             <label class="radio-inline"><input type="radio" name="sport" value="kitesurfen">Kitesurfen</label>
             <label class="radio-inline"><input type="radio" name="sport" value="golfsurfen">Golfsurfen</label>
           </div>
+
+         <div class="dropdown">
+           <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Leskeuze
+           <span class="caret"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right">
+          <li><a href="#">Kitesurfen</a></li>
+          <li><a href="#">Golfsurfen</a></li>
+          </ul>
+        </div>
+
+
+
          <!-- Datum -->
         <div class="form-line ">
-                 <div class="input-group datepicker">
+                 <div class="input-group datepicker" id="datetimepicker1">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                 <input class="set-due-date form-control" type="text" name="date"/>
               </div>
 
 
-                 <div class="input-group timepicker">
+                 <div class="input-group timepicker" id="datetimepicker2">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
                 <input class="set-due-date form-control" type="text" name="time"/>
               </div>
