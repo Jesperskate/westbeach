@@ -51,8 +51,8 @@ Template.rooster.events({
 });
 
 Template.rooster.rendered = function() {
-    $('.datepicker').datetimepicker({useCurrent: true, format: 'DD/MM/YYYY'});
-    $('.timepicker').datetimepicker({useCurrent: true, format: 'LT'});
+    $('.datepicker').datetimepicker({useCurrent: true, allowInputToggle: true, format: 'DD/MM/YYYY'});
+    $('.timepicker').datetimepicker({useCurrent: true, allowInputToggle: true, format: 'LT'});
 
 
 }
