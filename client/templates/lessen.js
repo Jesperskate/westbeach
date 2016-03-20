@@ -1,4 +1,5 @@
 if(Meteor.isClient){
+
 	
 Template.kitesurfen.helpers({
 	lessen: function(){
@@ -17,12 +18,30 @@ Template.golfsurfen.helpers({
 });
 
 
+	
+	
+	
+
 Template.les.events({
     "click .delete": function () {
     	Lessen.remove(this._id);
     	// Meteor.call("deleteLesson", this._id);
+	      },    
+
+	"click #inschrijf-popup": function () {
+
+		
+		// Session.set('showRegister',true);
+		// var x = Session.get('showRegister');
+		// console.log('Waah: '+x);
+
+		$("#showme").show();
+    		
 	      }
+
+
   });
+
 
 
 Meteor.methods({
