@@ -10,7 +10,7 @@ Template.rooster.events({
     var capaciteit = event.target.capaciteit.value;
 
 
-    console.log("Submitvalues: "+sport, date);
+    console.log("Submitted values: "+sport, date);
 
     // // Insert a task into the collection
     // Meteor.call("addLes", sport);
@@ -28,6 +28,8 @@ Template.rooster.events({
       event.target.date.value = "";
       event.target.time.value = "";
       event.target.level.value = "";
+
+      Router.go(sport);
 
   },
 
