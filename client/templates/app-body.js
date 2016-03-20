@@ -39,9 +39,9 @@ Template.appBody.onRendered(function() {
         .hide()
         .insertBefore(next)
         .fadeIn(function () {
-          if (listFadeInHold) {
-            listFadeInHold.release();
-          }
+         
+         // waar dit voor is weet ik niet :JV
+          
         });
     },
     removeElement: function(node) {
@@ -73,15 +73,12 @@ Template.appBody.helpers({
   userMenuOpen: function() {
     return Session.get(USER_MENU_KEY);
   },
-  lists: function() {
-    return Lists.find();
+
+// importeer collection in app!
+  lessen: function(){
+    return Lessen.find();
   },
-  activeListClass: function() {
-    var current = Router.current();
-    if (current.route.name === 'listsShow' && current.params._id === this._id) {
-      return 'active';
-    }
-  },
+
   connected: function() {
     if (Session.get(SHOW_CONNECTION_ISSUE_KEY)) {
       return Meteor.status().connected;
