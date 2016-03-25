@@ -18,5 +18,5 @@ tracker
 check
 twbs:bootstrap
 tsega:bootstrap3-datetimepicker
-ncrosby:quick-popup
 alanning:roles
+gravitum:popup-views

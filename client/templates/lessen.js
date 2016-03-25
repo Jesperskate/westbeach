@@ -35,8 +35,9 @@ Template.les.events({
 		// var x = Session.get('showRegister');
 		// console.log('Waah: '+x);
 
-		$("#showme").show();
-    		
+
+    		Meteor.popUp("inschrijfModal");
+
 	      }
 
 
