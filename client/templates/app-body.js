@@ -116,6 +116,7 @@ Template.appBody.events({
 
 });
 
+Meteor.subscribe('publicAanmeldingen');
 
 Template.inschrijfModal.events({
   'submit': function(event, template) {
@@ -123,8 +124,6 @@ Template.inschrijfModal.events({
     var email = event.target.email.value;
     var naam = event.target.naam.value;
     var leeftijdsgroep = event.target.leeftijdsgroep.value;
-
-
 
 
       Aanmeldingen.insert({

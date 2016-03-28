@@ -30,13 +30,10 @@ Template.les.events({
 
 	"click #inschrijf-popup": function () {
 
-		
-		// Session.set('showRegister',true);
-		// var x = Session.get('showRegister');
-		// console.log('Waah: '+x);
 
 
-    		Meteor.popUp("inschrijfModal");
+    		Meteor.popUp("inschrijfModal", this._id);
+    		console.log(this._id);
 
 	      }
 
