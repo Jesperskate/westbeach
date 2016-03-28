@@ -115,3 +115,36 @@ Template.appBody.events({
 
 
 });
+
+
+Template.inschrijfModal.events({
+  'submit': function(event, template) {
+    event.preventDefault();
+    var email = event.target.email.value;
+    var naam = event.target.naam.value;
+    var leeftijdsgroep = event.target.leeftijdsgroep.value;
+
+
+
+
+      Aanmeldingen.insert({
+        email: email,
+        naam: naam,
+        leeftijd: leeftijdsgroep,
+        createdAt: new Date() // current time
+      });
+
+    console.log("Submitted values: "+email+naam+leeftijdsgroep);
+
+      event.target.email.value = "";
+      event.target.name.value = "";
+
+
+
+      // Router.go('#');
+
+  }
+
+
+});
+
