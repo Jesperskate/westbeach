@@ -30,10 +30,10 @@ Template.les.events({
 
 	"click #inschrijf-popup": function () {
 
-
-
-    		Meteor.popUp("inschrijfModal", this._id);
-    		console.log(this._id);
+			var idLes = this._id;
+			console.log('idLes: '+idLes);
+    		Meteor.popUp("inschrijfModal", idLes);
+    
 
 	      }
 

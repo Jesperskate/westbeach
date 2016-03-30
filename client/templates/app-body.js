@@ -147,3 +147,8 @@ Template.inschrijfModal.events({
 
 });
 
+
+// hier moet wat mee gedaan worden misschien! Study helpers...
+Template.inschrijfModal.helpers({
+
+});
