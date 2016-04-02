@@ -50,6 +50,15 @@ Template.les.events({
       }
 
 
+  });	
+
+Template.aanmelding.events({
+    "click .deleteAanmelding": function () {
+    	Aanmeldingen.remove(this._id);
+    
+	      }   
+
+
   });
 
 

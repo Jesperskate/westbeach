@@ -18,3 +18,17 @@
 #showme{
 	display: none;
 }
+
+.blue-btn{
+	 
+    padding-left: 10px;
+    height: 35px;
+    color: white;
+    background-color: #00ADEF;
+}
+.full-width{
+	width: 100%;
+}
+.control-label{
+	height: 1.5em;
+}
