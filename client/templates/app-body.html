@@ -26,7 +26,10 @@
       {{/if}}
 
       <div class="items">
-        
+          {{#if isInRole 'admin'}}
+        <a href="{{pathFor 'dashboard'}}" >
+          Dashboard </a>
+          {{/if}}
           <a href="{{pathFor 'kitesurfen'}}">Kitesurfen</a>
           <a href="{{pathFor 'golfsurfen'}}">Golfsurfen</a>
           <a href="{{pathFor 'join'}}">Huren</a>
