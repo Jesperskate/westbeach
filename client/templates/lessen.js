@@ -30,17 +30,15 @@ Template.les.events({
 
 	"click #inschrijf-popup": function () {
 
-			
-			Session.set('idLesOpen', this._id);
-			if(Session.get('idLesOpen')){
-				console.log('session is set'+ Session.get('idLesOpen'));
-			}
+		
+		Session.set('idLesOpen', this._id);
+		if(Session.get('idLesOpen')){
+			console.log('session is set'+ Session.get('idLesOpen'));
+		}
+		Meteor.popUp("inschrijfModal");
 
 
-    		Meteor.popUp("inschrijfModal");
-    
-
-	      }
+      }
 
 
   });

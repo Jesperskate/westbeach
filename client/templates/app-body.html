@@ -73,12 +73,28 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         {{#with Lessen}}
-        <h4 class="modal-title">Inschrijven:{{data._id}}</h4>
+        <h4 class="modal-title">Inschrijven voor:</h4>
+        <small>
+       
+          <strong>{{data.sport}}</strong><br>
+          {{data.date}}<br>
+          {{data.starttime}}
+
+        </small>
         {{/with}}
       </div>
       <div class="modal-body">
         <!-- Inschrijf form -->
         <form class="form-horizontal" role="form">
+          <!-- Hidden id van les om aan te melden -->
+          {{#with Lessen}}
+          <div class="form-group hidden">
+            <label class="control-label col-sm-4" for="idLes">id Les:</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" name="idLes"  value="{{data._id}}">
+            </div>
+          </div>
+             {{/with}}
           <div class="form-group">
             <label class="control-label col-sm-4" for="email">Email:</label>
             <div class="col-sm-8">
