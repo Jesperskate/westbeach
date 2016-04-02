@@ -10,8 +10,11 @@ Meteor.publish('publicAanmeldingen', function() {
 
 
 // server code
-if (Meteor.isServer) {
-
-
-
+if(Meteor.isServer) {
+  Meteor.publish("userList", function() {
+    return Meteor.users.find({}, {fields: {username: 1, profile: 1, roles: 1}});
+  });
+  Meteor.publish("allRoles", function(){
+    return Roles.getAllRoles();
+  });
 }
