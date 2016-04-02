@@ -150,5 +150,15 @@ Template.inschrijfModal.events({
 
 // hier moet wat mee gedaan worden misschien! Study helpers...
 Template.inschrijfModal.helpers({
+  data: function(){
+    return Lessen.findOne( { _id: Session.get('idLesOpen')});
+  }
+
 
 });
+
+    Template.inschrijfModal.Lessen = function(){
+
+        return Lessen.findOne();
+
+    }
