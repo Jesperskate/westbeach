@@ -121,12 +121,16 @@ Meteor.subscribe('publicAanmeldingen');
 Template.inschrijfModal.events({
   'submit': function(event, template) {
     event.preventDefault();
+    var idLes = event.target.idLes.value;
     var email = event.target.email.value;
     var naam = event.target.naam.value;
     var leeftijdsgroep = event.target.leeftijdsgroep.value;
 
+    if (idLes === undefined) { return false };
+
 
       Aanmeldingen.insert({
+        idLes: idLes,
         email: email,
         naam: naam,
         leeftijd: leeftijdsgroep,
@@ -135,12 +139,21 @@ Template.inschrijfModal.events({
 
     console.log("Submitted values: "+email+naam+leeftijdsgroep);
 
+      event.target.idLes.value = "";
       event.target.email.value = "";
       event.target.name.value = "";
 
+      Meteor.call('sendEmail',
+            'jespervoorendt@hotmail.com',
+            'bob@example.com',
+            'Hello from Meteor!',
+            'This is a test of Email.send.');
+      if(Meteor.call('sendEmail')){
+        console.log('email sent');
+      }
 
-
-      // Router.go('#');
+        Meteor.popDown('inschrijfModal');
+         FlashMessages.sendSuccess("Inschrijven gelukt");
 
   }
 
@@ -150,5 +163,14 @@ Template.inschrijfModal.events({
 
 // hier moet wat mee gedaan worden misschien! Study helpers...
 Template.inschrijfModal.helpers({
+  data: function(){
+    return Lessen.findOne( { _id: Session.get('idLesOpen')});
+  }
+
 
 });
+
+  Template.inschrijfModal.Lessen = function(){
+        return Lessen.findOne();
+    }
+

@@ -17,6 +17,16 @@ Template.golfsurfen.helpers({
 
 });
 
+Template.les.helpers({
+	aanmeldingen: function(){
+		return Aanmeldingen.find({ idLes: this._id});
+	},
+	aantalDeelnemers: function(){
+		return Aanmeldingen.find({ idLes: this._id}).count();
+
+	}
+
+})
 
 	
 	
@@ -30,12 +40,23 @@ Template.les.events({
 
 	"click #inschrijf-popup": function () {
 
-			var idLes = this._id;
-			console.log('idLes: '+idLes);
-    		Meteor.popUp("inschrijfModal", idLes);
-    
+		Session.set('idLesOpen', this._id);
+		if(Session.get('idLesOpen')){
+			console.log('session is set'+ Session.get('idLesOpen'));
+		}
+		Meteor.popUp("inschrijfModal");
 
-	      }
+
+      }
+
+
+  });	
+
+Template.aanmelding.events({
+    "click .deleteAanmelding": function () {
+    	Aanmeldingen.remove(this._id);
+    
+	      }   
 
 
   });
