@@ -126,6 +126,8 @@ Template.inschrijfModal.events({
     var naam = event.target.naam.value;
     var leeftijdsgroep = event.target.leeftijdsgroep.value;
 
+    if (idLes === undefined) { return false };
+
 
       Aanmeldingen.insert({
         idLes: idLes,
@@ -146,11 +148,12 @@ Template.inschrijfModal.events({
             'bob@example.com',
             'Hello from Meteor!',
             'This is a test of Email.send.');
-      if(Meteor.call()){
+      if(Meteor.call('sendEmail')){
         console.log('email sent');
       }
 
         Meteor.popDown('inschrijfModal');
+         FlashMessages.sendSuccess("Inschrijven gelukt");
 
   }
 
