@@ -17,6 +17,16 @@ Template.golfsurfen.helpers({
 
 });
 
+Template.les.helpers({
+	aanmeldingen: function(){
+		return Aanmeldingen.find({ idLes: this._id});
+	},
+	aantalDeelnemers: function(){
+		return Aanmeldingen.find({ idLes: this._id}).count();
+
+	}
+
+})
 
 	
 	
@@ -30,7 +40,6 @@ Template.les.events({
 
 	"click #inschrijf-popup": function () {
 
-		
 		Session.set('idLesOpen', this._id);
 		if(Session.get('idLesOpen')){
 			console.log('session is set'+ Session.get('idLesOpen'));
