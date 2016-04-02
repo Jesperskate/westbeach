@@ -21,11 +21,6 @@ Meteor.startup(function () {
     preventDefaultEvents: false
   });
 
-
-
-
-
-
   // Only show the connection error box if it has been 5 seconds since
   // the app started
   setTimeout(function () {
@@ -117,10 +112,6 @@ Template.appBody.events({
       Router.go('kitesurfen');
     }
   },
-  'click .tester': function(){
-  //test omgeving
-
-  }
 
 
 });
