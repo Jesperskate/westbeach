@@ -15,7 +15,11 @@
           </a>
           {{#if userMenuOpen}}
             <a  class=" btn-secondary" href="{{pathFor 'rooster'}}">Nieuwe les</a>
-            <!-- <a  class=" btn-secondary" href="{{pathFor 'rooster'}}">Nieuw event</a> -->
+          
+            {{#if isInRole 'admin'}}
+            <a class=" btn-secondary" href="{{pathFor 'dashboard'}}" >
+              Dashboard </a>
+              {{/if}}
             <a class="js-logout btn-secondary">Logout</a>
           {{/if}}
         </div>
@@ -27,10 +31,7 @@
       {{/if}}
 
       <div class="items">
-          {{#if isInRole 'admin'}}
-        <a href="{{pathFor 'dashboard'}}" >
-          Dashboard </a>
-          {{/if}}
+
           <a href="{{pathFor 'golfsurfen'}}">Surfles</a>
           <a href="{{pathFor 'kitesurfen'}}">Kiteles</a>
           <a href="{{pathFor 'bootcamp'}}">Bootcamp</a>

@@ -145,9 +145,9 @@ Template.inschrijfModal.events({
 
       Meteor.call('sendEmail',
             'jespervoorendt@hotmail.com',
-            'bob@example.com',
-            'Hello from Meteor!',
-            'This is a test of Email.send.');
+            'jvoorendt@gmail.com',
+            'Inschrijving gelukt',
+            'Beste '+naam+', je inschrijving staat bij ons nu in het systeem. tot snel!');
       if(Meteor.call('sendEmail')){
         console.log('email sent');
       }

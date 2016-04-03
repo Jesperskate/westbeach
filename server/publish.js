@@ -11,6 +11,9 @@ Meteor.publish('publicAanmeldingen', function() {
 
 // server code
 if(Meteor.isServer) {
+  process.env.MAIL_URL="smtp://jvoorendt%40gmail.com:Bl@dch1l@smtp.gmail.com:465/";  
+
+
   Meteor.publish("userList", function() {
     return Meteor.users.find({}, {fields: {username: 1, profile: 1, roles: 1}});
   });
