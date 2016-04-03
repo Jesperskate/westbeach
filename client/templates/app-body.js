@@ -149,7 +149,7 @@ Template.inschrijfModal.events({
             'Inschrijving gelukt',
             'Beste '+naam+', je inschrijving staat bij ons nu in het systeem. tot snel!');
       if(Meteor.call('sendEmail')){
-        console.log('email sent');
+
       }
 
         Meteor.popDown('inschrijfModal');

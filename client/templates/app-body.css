@@ -38,3 +38,7 @@
 .delete:hover, .deleteAanmelding:hover{
   color: red;
 }
+.customform input{
+  padding: 1em;
+  margin-bottom: 5px;
+}
