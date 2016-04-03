@@ -1,7 +1,8 @@
 
 <template name="les">
   <div class="les-moment">
-    <div id="date-blue"><span id="number">{{date}}</span><br><span id="month"></span></div>
+    <!-- leermoment! {{displaydate date}} pakt date als input variable nu ;) -->
+    <div id="date-blue"><span id="number">{{displaydate date}}</span><br><span id="month"></span></div>
       <div class="box1">
         {{starttime}}| {{level}}
       </div>
@@ -10,9 +11,9 @@
     </div>
       </div>
       {{#if currentUser}}
-      <span class="delete">Remove</span>
+      <span class="delete">Verwijder deze les</span>
 
-      <table class="table">
+      <table class="table table-striped">
       <thead>
         <tr>
           <th>Naam</th>
