@@ -3,7 +3,10 @@ if(Meteor.isClient){
 	
 Template.kitesurfen.helpers({
 	lessen: function(){
-		return Lessen.find({sport:'kitesurfen'});
+
+		// Om lessen op de juiste datum volgorde te zetten, moet eerst de input naar 'date' worden veranderd
+		// van dd/mm/jjjj naar een js date()... want nu pakt het alleen de dag en niet de maand.
+		return Lessen.find({sport:'kitesurfen'}, { sort: { 'date' : 1 } });
 	}
 
 });
@@ -41,15 +44,22 @@ Template.les.helpers({
 
 	},
 	 displaydate: function (datemongo) {
-	    var date = datemongo.slice(0,5);
-	    var monthNames = [ "January", "February", "March", "April", "May", "June",
-"July", "August", "September", "October", "November", "December" ];
+	    var date = datemongo.slice(0,2);
+
+
+
+	    return date ;
+ 	 },
+ 	 displaymonth: function (datemongo) {
+	
+	    var monthNames = [ "JAN", "FEB", "MRT", "APR", "MEI", "JUN",
+"JUL", "AUG", "SEP", "OKT", "NOV", "DEC" ];
 
 		var monthNr = datemongo.slice(4,5);
 
 		var month = monthNames[monthNr-1];
 
-	    return date +month;
+	    return month;
  	 }
 
 })
