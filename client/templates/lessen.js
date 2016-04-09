@@ -43,8 +43,9 @@ Template.les.helpers({
 		return Aanmeldingen.find({ idLes: this._id}).count();
 
 	},
-	 displaydate: function (datemongo) {
-	    var date = datemongo.slice(3,5);
+
+ 	 displaydate: function (datemongo) {
+	    var date = String(datemongo).slice(8,10);
 
 
 
@@ -52,12 +53,12 @@ Template.les.helpers({
  	 },
  	 displaymonth: function (datemongo) {
 	
-	    var monthNames = [ "JAN", "FEB", "MRT", "APR", "MEI", "JUN",
-"JUL", "AUG", "SEP", "OKT", "NOV", "DEC" ];
+// 	    var monthNames = [ "JAN", "FEB", "MRT", "APR", "MEI", "JUN",
+// "JUL", "AUG", "SEP", "OKT", "NOV", "DEC" ];
 
-		var monthNr = datemongo.slice(0,2);
+		var month = String(datemongo).slice(4,7);
 
-		var month = monthNames[monthNr-1];
+		// var month = monthNames[monthNr-1];
 
 	    return month;
  	 }
