@@ -28,7 +28,7 @@ Template.rooster.events({
       for (var i = 1; i <= herhalen; i++) {
         // add week or more PUINHOOP
         var dagentoevoegen = i * 7;
-        var nextweek = moment().add(dagentoevoegen, 'days');
+        var nextweek = moment(dated).add(dagentoevoegen, 'days');
         console.log('Handig om te zien: '+nextweek);
         var d = new Date(nextweek);
 
