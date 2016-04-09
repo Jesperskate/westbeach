@@ -26,12 +26,16 @@ Template.rooster.events({
       console.log('hi were in if');
 
       for (var i = 1; i <= herhalen; i++) {
-        // add week or more
-        dated.setDate(dated.getDate() + (7* i));
+        // add week or more PUINHOOP
+        var dagentoevoegen = i * 7;
+        var nextweek = moment().add(dagentoevoegen, 'days');
+        console.log('Handig om te zien: '+nextweek);
+        var d = new Date(nextweek);
+
 
           Lessen.insert({
             sport: sport,
-            date: dated,
+            date: d,
             starttime:starttime,
             level:level,
             capaciteit:capaciteit,

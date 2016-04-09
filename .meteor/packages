@@ -22,3 +22,4 @@ gravitum:popup-views
 email
 mrt:flash-messages
 blaze-html-templates
+momentjs:moment
