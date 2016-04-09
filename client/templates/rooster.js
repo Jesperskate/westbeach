@@ -5,35 +5,29 @@ Template.rooster.events({
     event.preventDefault();
     var sport = event.target.sport.value;
     var date = event.target.date.value;
-    var starttime = event.target.time.value;
+
+
+
+    var starttime = date.slice(10,19);
     var level = event.target.level.value;
     var capaciteit = event.target.capaciteit.value;
 
-    console.log('log: '+ date);
+    console.log('Value: '+ date);
 
     var steps = [];
 
     var dated = new Date(date);
-    var newdate = new Date(dated);
+    console.log("New date resultaat: "+dated );
 
-    newdate.setDate(newdate.getDate() + 7);
+    // add week
+    dated.setDate(dated.getDate() + 7);
 
-
-    var dd = newdate.getDate();
-    var mm = newdate.getMonth() + 1;
-    var y = newdate.getFullYear();
-
-    var someFormattedDate = mm + '/' + dd + '/' + y;
-
-    console.log('someFormattedDate: '+someFormattedDate);
-
-    // // Insert a task into the collection
-    // Meteor.call("addLes", sport);
+    console.log('Week toegevoegd: '+ dated);
 
       Lessen.insert({
         sport: sport,
         date: date,
-        starttime:starttime,
+         starttime:starttime,
         level:level,
         capaciteit:capaciteit,
         createdAt: new Date() // current time
@@ -43,7 +37,7 @@ Template.rooster.events({
 
       event.target.sport.value = "";
       event.target.date.value = "";
-      event.target.time.value = "";
+      // event.target.time.value = "";
       event.target.level.value = "";
 
       Router.go(sport);
@@ -70,8 +64,9 @@ Template.rooster.events({
 });
 
 Template.rooster.rendered = function() {
-    $('.datepicker').datetimepicker({useCurrent: true, allowInputToggle: true, format: 'DD/MM/YYYY '});
-    $('.timepicker').datetimepicker({useCurrent: true, allowInputToggle: true, format: 'HH:mm'});
+  // format dat heb ik verwijderd omdat het toeveoegn van 7 dagen bijv. makkelijker gaat met de default format
+    $('.datepicker').datetimepicker({useCurrent: true, allowInputToggle: true});
+    $('.timepicker').datetimepicker({useCurrent: true, allowInputToggle: true});
 
 }
 

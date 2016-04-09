@@ -44,7 +44,7 @@ Template.les.helpers({
 
 	},
 	 displaydate: function (datemongo) {
-	    var date = datemongo.slice(0,2);
+	    var date = datemongo.slice(3,5);
 
 
 
@@ -55,7 +55,7 @@ Template.les.helpers({
 	    var monthNames = [ "JAN", "FEB", "MRT", "APR", "MEI", "JUN",
 "JUL", "AUG", "SEP", "OKT", "NOV", "DEC" ];
 
-		var monthNr = datemongo.slice(4,5);
+		var monthNr = datemongo.slice(0,2);
 
 		var month = monthNames[monthNr-1];
 
