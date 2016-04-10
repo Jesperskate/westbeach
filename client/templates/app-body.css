@@ -79,8 +79,11 @@ body{
 }
 .menu-footer-text{
     font-size: 10px;
-    color: grey;
+    color: grey !important;
     bottom: 10px;
     left: 25px;
     position: absolute;
+}
+.menu-footer-text:hover{
+  text-decoration: none;
 }
