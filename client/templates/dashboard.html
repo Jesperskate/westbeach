@@ -1,32 +1,42 @@
 <template name="dashboard">
-  <div class="wrapper-center">
-    {{#if isInRole 'admin'}}
-      <h1 class="title-page">Users</h1>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Email Address</th>
-            <th class="text-center">Role</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each users}}
+
+  <div class="page dashboard">
+    <nav>
+      <div class="nav-group">
+        <a href="#" class="js-menu nav-item"><span class="icon-list-unordered"></span></a>
+      </div>
+    </nav>
+
+
+    <div class="wrapper-center">
+      {{#if isInRole 'admin'}}
+        <h1 class="title-page">Users</h1>
+        <table class="table table-bordered">
+          <thead>
             <tr>
-              
-                          <td class="text-left text-middle">{{#if isCurrentUser _id}}<label class="label label-success">You!</label>{{/if}} 
+              <th>Email Address</th>
+              <th class="text-center">Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each users}}
+              <tr>
+                
+                            <td class="text-left text-middle">{{#if isCurrentUser _id}}<label class="label label-success">You!</label>{{/if}} 
 
-                          {{emails.[0].address}}</td>
-            <td>
-             <select {{disableIfAdmin _id}} name="userRole" class="form-control">
-                <option selected="{{selected roles.[0] 'admin'}}" value="admin">Admin</option>
-                <option selected="{{selected roles.[0] 'instructeur'}}" value="instructeur">Instructeur</option>
+                            {{emails.[0].address}}</td>
+              <td>
+               <select {{disableIfAdmin _id}} name="userRole" class="form-control">
+                  <option selected="{{selected roles.[0] 'admin'}}" value="admin">Admin</option>
+                  <option selected="{{selected roles.[0] 'instructeur'}}" value="instructeur">Instructeur</option>
 
-              </select>
-            </td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  {{/if}}
-</div>
+                </select>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    {{/if}}
+  </div>
+ </div> 
 </template>

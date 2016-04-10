@@ -77,3 +77,10 @@ body{
   text-transform: capitalize;
   font-weight: 600;
 }
+.menu-footer-text{
+    font-size: 10px;
+    color: grey;
+    bottom: 10px;
+    left: 25px;
+    position: absolute;
+}
