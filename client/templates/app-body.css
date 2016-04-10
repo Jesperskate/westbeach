@@ -66,4 +66,10 @@ body{
   color: #00ADEF;
   margin: 3px;
 }
-
+.small-icon{
+  height: 30px;
+}.small-icon-menu{
+  width: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
