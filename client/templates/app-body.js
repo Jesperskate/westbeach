@@ -144,10 +144,10 @@ Template.inschrijfModal.events({
       event.target.name.value = "";
 
       Meteor.call('sendEmail',
-            'jespervoorendt@hotmail.com',
+            email,
             'jvoorendt@gmail.com',
             'Inschrijving gelukt',
-            'Beste '+naam+', je inschrijving staat bij ons nu in het systeem. tot snel!');
+            'Beste '+naam+', \r U bent nu ingeschreven voor: \r '+ idLes+ '\r \r Sportieve groeten! \r \r Westbeach');
       if(Meteor.call('sendEmail')){
 
       }
