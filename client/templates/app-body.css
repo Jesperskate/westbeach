@@ -73,3 +73,7 @@ body{
   margin-right: 10px;
   margin-left: 10px;
 }
+.dikgedrukt{
+  text-transform: capitalize;
+  font-weight: 600;
+}

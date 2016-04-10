@@ -140,6 +140,7 @@ Template.inschrijfModal.events({
     console.log("Submitted values: "+email+naam+leeftijdsgroep);
 
      var sportnaam = event.target.sportnaam.value;
+     var sportdate = event.target.sportdate.value.slice(0, 16);
 
       event.target.idLes.value = "";
       event.target.email.value = "";
@@ -149,7 +150,7 @@ Template.inschrijfModal.events({
             email,
             'jvoorendt@gmail.com',
             'Inschrijving gelukt',
-            'Beste '+naam+', \r U bent nu ingeschreven voor: \r '+ sportnaam+ '\r \r Sportieve groeten! \r \r Westbeach');
+            'Beste '+naam+', \r \r U bent nu ingeschreven voor: \r '+ sportnaam+ ' - '+sportdate+'\r \r Uitschrijven kan via deze link: \r <a href="#">Uitschrijven</a> Sportieve groeten! \r \r Westbeach');
       if(Meteor.call('sendEmail')){
 
       }

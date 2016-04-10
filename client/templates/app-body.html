@@ -88,10 +88,11 @@
         <h4 class="modal-title">Inschrijven voor:</h4>
         <small>
        
-          <strong id="sportnaam" value="lol">{{data.sport}}</strong><br>
+          <span class="dikgedrukt">{{data.sport}}</span><br>
           {{data.date}}<br>
           {{data.starttime}}
 
+ 
         </small>
         {{/with}}
       </div>
@@ -104,6 +105,11 @@
             <label class="control-label col-sm-2" for="idLes">id Les:</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" name="idLes"  value="{{data._id}}" required>
+
+              <input type="text" class="hidden" name="sportnaam" value="{{data.sport}}">
+              <input type="text" class="hidden" name="sportdate" value="{{data.date}}">
+              <input type="text" class="hidden" name="sportstarttime" value="{{data.starttime}}">
+
             </div>
           </div>
              {{/with}}
@@ -134,7 +140,7 @@
                 <option>8 - 11</option>
                 <option>12 - 15</option>
                 <option>16 - 18</option>
-                <option selected="selected">18+</option >
+                <option selected="selected">Ouder dan 18</option >
               </select>
             </div>
           </div>
