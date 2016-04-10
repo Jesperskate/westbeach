@@ -8,8 +8,8 @@
 
     <div class="content-scrollable">
       <div class="wrapper-auth">
-        <h1 class="title-auth">Join.</h1>
-        <p class="subtitle-auth" >Joining allows you to make private lists</p>
+        <h1 class="title-auth">Registreer.</h1>
+        <p class="subtitle-auth" >Maak hier een nieuw account aan</p>
 
         <form class="customform">
           {{#if errorMessages}}
@@ -21,25 +21,25 @@
           {{/if}}
 
           <div class="input-symbol  {{errorClass 'email'}}">
-            <input type="email" name="email" placeholder="Your Email" />
+            <input type="email" name="email" placeholder="Uw Email" />
             <span class="icon-email" title="Your Email"></span>
           </div>
 
           <div class="input-symbol  {{errorClass 'password'}}">
-            <input type="password" name="password" placeholder="Password" />
+            <input type="password" name="password" placeholder="Wachtwoord" />
             <span class="icon-lock" title="Password"></span>
           </div>
 
           <div class="input-symbol {{errorClass 'confirm'}}">
-            <input type="password" name="confirm" placeholder="Confirm Password" />
+            <input type="password" name="confirm" placeholder="Bevestig wachtwoord" />
             <span class="icon-lock" title="Confirm Password"></span>
           </div>
 
-          <button type="submit" class="btn-primary">Join Now</button>
+          <button type="submit" class="btn-primary">Registreer nu</button>
         </form>
       </div>
 
-      <a href="{{pathFor 'signin'}}" class="link-auth-alt">Have an account? Sign in</a>
+      <a href="{{pathFor 'signin'}}" class="link-auth-alt">Heb je al een account? Log in</a>
     </div>
   </div>
 </template>
