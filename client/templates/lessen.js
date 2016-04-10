@@ -6,28 +6,30 @@ Template.kitesurfen.helpers({
 // Om lessen op de juiste datum volgorde te zetten, moet eerst de input naar 'date' worden veranderd
 		// van dd/mm/jjjj naar een js date()... want nu pakt het alleen de dag en niet de maand.
 		
-		return Lessen.find({sport:'kitesurfen'}, { sort: { 'date' : 1 } });
+		return Lessen.find({sport:'kitesurfen', 'date' : { $gte : new Date()}}, { sort: { 'date' : 1 } });
 	}
 
 });
 
 
+
+
 //code for golfsurfen
 Template.golfsurfen.helpers({
 	lessen: function(){
-		return Lessen.find({sport:'golfsurfen'}, { sort: { 'date' : 1 } });
+		return Lessen.find({sport:'golfsurfen', 'date' : { $gte : new Date()}}, { sort: { 'date' : 1 } });
 	}
 
 });	
 Template.home.helpers({
 	lessen: function(){
-		return Lessen.find({},{ sort: { 'date' : 1 } });
+		return Lessen.find({ 'date' : { $gte : new Date()}},{ sort: { 'date' : 1 } });
 	}
 
 });	
 Template.bootcamp.helpers({
 	lessen: function(){
-		return Lessen.find({sport:'bootcamp'},{ sort: { 'date' : 1 } });
+		return Lessen.find({sport:'bootcamp', 'date' : { $gte : new Date()}},{ sort: { 'date' : 1 } });
 	}
 
 });
@@ -36,7 +38,7 @@ Template.bootcamp.helpers({
 //code for golfsurfen
 Template.yoga.helpers({
 	lessen: function(){
-		return Lessen.find({sport:'yoga'}, { sort: { 'date' : 1 } });
+		return Lessen.find({sport:'yoga', 'date' : { $gte : new Date()}}, { sort: { 'date' : 1 } });
 	}
 
 });
