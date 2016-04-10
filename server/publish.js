@@ -8,6 +8,10 @@ Meteor.publish('publicAanmeldingen', function() {
   return Aanmeldingen.find();
 });
 
+ Meteor.publish('allUsers', function() {
+   return Meteor.users.find({}, {fields:{username:1,emails:1}})
+ });
+
 
 // server code
 if(Meteor.isServer) {
@@ -52,7 +56,20 @@ if(Meteor.isServer) {
 	  }
 	});
 
+  Meteor.methods({
+  setRoleOnUser: function( options ) {
+    check( options, {
+      user: String,
+      role: String
+    });
 
+    try {
+      Roles.setUserRoles( options.user, [ options.role ] );
+    } catch( exception ) {
+      return exception;
+    }
+  }
+});
   
 
 

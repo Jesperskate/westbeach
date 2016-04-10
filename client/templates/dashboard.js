@@ -3,6 +3,7 @@ Template.dashboard.onCreated( () => {
 });
 
 Meteor.subscribe('userList');
+Meteor.subscribe('allUsers');
 
 Template.dashboard.helpers({
   currentUser: function() {
@@ -20,20 +21,6 @@ Template.dashboard.helpers({
   },
 });
 
-// Template.dashboard( 'isCurrentUser', ( currentUser ) => {
-//   return currentUser === Meteor.userId() ? true : false;
-// });
-
-// Template.dashboard( 'disableIfAdmin', ( userId ) => {
-//   if ( Meteor.userId() === userId ) {
-//     return Roles.userIsInRole( userId, 'admin' ) ? "disabled" : "";
-//   }
-// });
-
-// Template.dashboard.helpers ( 'selected', ( v1, v2 ) => {
-//   return v1 === v2 ? true : false;
-// });
-
 Template.dashboard.helpers({
 	'selected' : function (v1, v2){
 		return v1 === v2 ? true :false;
@@ -46,5 +33,20 @@ Template.dashboard.helpers({
 			return Roles.userIsInRole (userId, 'admin') ? "disabled" : "";
 		}
 	}
+});
+
+Template.dashboard.events({
+  'change [name="userRole"]': function( event, template ) {
+    let role = $( event.target ).find( 'option:selected' ).val();
+
+    Meteor.call( "setRoleOnUser", {
+      user: this._id,
+      role: role
+    }, ( error, response ) => {
+      if ( error ) {
+        alert( error.reason, "warning" );
+      }
+    });
+  },
 });
 
