@@ -1,3 +1,6 @@
+
+
+
 var MENU_KEY = 'menuOpen';
 Session.setDefault(MENU_KEY, false);
 
@@ -137,7 +140,10 @@ Template.inschrijfModal.events({
         createdAt: new Date() // current time
       });
 
-    console.log("Submitted values: "+email+naam+leeftijdsgroep);
+    // vind een aanmelding die hoort bij de les
+    var huidigeAanmelding = Aanmeldingen.findOne({'idLes': idLes, 'email': email});
+
+    console.log("Aanmelding aangemaakt "+ huidigeAanmelding._id+" en email "+huidigeAanmelding.email );
 
      var sportnaam = event.target.sportnaam.value;
      var sportdate = event.target.sportdate.value.slice(0, 16);
@@ -151,7 +157,7 @@ Template.inschrijfModal.events({
             email,
             'jvoorendt@gmail.com',
             'Inschrijving gelukt',
-            'Beste '+naam+', \r \r U bent nu ingeschreven voor: \r '+ sportnaam+ ' - '+sportdate+' - '+sportstarttime+'\r \r Uitschrijven kan via deze link: \r <a href="#">Uitschrijven</a> Sportieve groeten! \r \r Westbeach');
+            'Beste '+naam+', \r \r U bent nu ingeschreven voor: \r '+ sportnaam+ ' - '+sportdate+' - '+sportstarttime+'\r \r Uitschrijven kan via deze link: \r http://localhost:3000/'+huidigeAanmelding._id+' \r\r Sportieve groeten! \r \r Westbeach');
       if(Meteor.call('sendEmail')){
 
       }
@@ -176,4 +182,21 @@ Template.inschrijfModal.helpers({
   Template.inschrijfModal.Lessen = function(){
         return Lessen.findOne();
     }
+
+
+if(Meteor.isClient){
+
+
+  // Router.route('afmelden', {
+  //   path: '/afmelden/:_id',
+  //   template: 'afmelden',
+  //   data: function() {
+  //     console.log('We zijn bezig je aanmelding te vinden...'+ this.params._id);
+  //     return Aanmeldingen.findOne({_id: this.params._id});
+  //   }
+  // });
+
+
+
+}
 

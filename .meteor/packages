@@ -10,7 +10,6 @@ mongo
 mobile-experience
 standard-minifiers
 less
-iron:router@0.9.4
 accounts-password
 jquery
 tracker
@@ -23,3 +22,4 @@ email
 mrt:flash-messages
 blaze-html-templates
 momentjs:moment
+iron:router

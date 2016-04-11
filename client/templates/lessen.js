@@ -1,6 +1,8 @@
 if(Meteor.isClient){
 
-	
+
+
+
 Template.kitesurfen.helpers({
 	lessen: function(){
 // Om lessen op de juiste datum volgorde te zetten, moet eerst de input naar 'date' worden veranderd
@@ -10,8 +12,6 @@ Template.kitesurfen.helpers({
 	}
 
 });
-
-
 
 
 //code for golfsurfen
