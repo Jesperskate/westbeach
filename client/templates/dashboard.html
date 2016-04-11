@@ -10,12 +10,12 @@
 
     <div class="wrapper-center">
       {{#if isInRole 'admin'}}
-        <h1 class="title-page">Users</h1>
+        <h1 class="title-page">Gebruikers</h1>
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th>Email Address</th>
-              <th class="text-center">Role</th>
+              <th>Email Adres</th>
+              <th class="text-center">Niveau</th>
             </tr>
           </thead>
           <tbody>
@@ -27,9 +27,9 @@
                             {{emails.[0].address}}</td>
               <td>
                <select {{disableIfAdmin _id}} name="userRole" class="form-control">
+                  <option selected="{{selected roles.[0] 'user'}}" value="user">Gebruiker</option>
                   <option selected="{{selected roles.[0] 'admin'}}" value="admin">Admin</option>
                   <option selected="{{selected roles.[0] 'instructeur'}}" value="instructeur">Instructeur</option>
-
                 </select>
               </td>
             </tr>
