@@ -8,7 +8,6 @@ meteor-base
 session
 mongo
 mobile-experience
-standard-minifiers
 less
 accounts-password
 jquery
@@ -23,3 +22,5 @@ mrt:flash-messages
 blaze-html-templates
 momentjs:moment
 iron:router
+standard-minifiers
+ecmascript

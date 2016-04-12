@@ -73,13 +73,21 @@ Template.les.helpers({
 
 })
 
+
+
+// Template.les.rendered=function() {
+    
+// }
 	
 	
 	
 
 Template.les.events({
     "click .delete": function () {
-    	Lessen.remove(this._id);
+    	if(confirm('Weet u zeker dat u deze les '+this.sport+' om'+this.starttime+'wilt verwijderen?')){
+    		Lessen.remove(this._id);
+    	}
+    	
     	// Meteor.call("deleteLesson", this._id);
 	      },    
 
@@ -99,11 +107,10 @@ Template.les.events({
 
 Template.aanmelding.events({
     "click .deleteAanmelding": function () {
-    	Aanmeldingen.remove(this._id);
-    
-	      }   
-
-
+    	if(confirm('Weet u zeker dat u deze aanmelding: '+this.naam+' - '+this.email+' wilt verwijderen?')){
+	    	Aanmeldingen.remove(this._id);
+    	}    
+	 }   
   });
 
 
