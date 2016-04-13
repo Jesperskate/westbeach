@@ -9,7 +9,6 @@ session
 mongo
 mobile-experience
 less
-accounts-password
 jquery
 tracker
 check
@@ -24,5 +23,7 @@ momentjs:moment
 iron:router
 standard-minifiers
 ecmascript
-accounts-ui
-accounts-base
+useraccounts:materialize
+accounts-password
+underscore
+useraccounts:iron-routing

@@ -121,6 +121,8 @@ Template.appBody.events({
 
 Meteor.subscribe('publicAanmeldingen');
 
+
+
 Template.inschrijfModal.events({
   'submit': function(event, template) {
     event.preventDefault();

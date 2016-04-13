@@ -1,5 +1,16 @@
 
 
+
+
+// server code
+if(Meteor.isServer) {
+
+Meteor.startup(function () {
+    // hmmm dit zorgt voor de internal server error bij reset password... 
+   process.env.MAIL_URL="smtp://jvoorendt%40gmail.com:Bl@dch1lFl1pfl4p@smtp.gmail.com:465/";  
+});
+
+
 Meteor.publish('publicLessen', function() {
   return Lessen.find();
 });
@@ -12,10 +23,6 @@ Meteor.publish('publicAanmeldingen', function() {
    return Meteor.users.find({}, {fields:{username:1,emails:1}})
  });
 
-
-// server code
-if(Meteor.isServer) {
-  process.env.MAIL_URL="smtp://jvoorendt%40gmail.com:Bl@dch1l@smtp.gmail.com:465/";  
 
 
   Meteor.publish("userList", function() {
