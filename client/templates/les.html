@@ -10,11 +10,13 @@
         <span class="les-mid-top">{{starttime}}</span><br><span class="les-mid-bottom">{{level}}</span>
       </div>
      <div class="box2"><button id="inschrijf-popup" class="black-btn">Inschrijven</button><br>
+      {{#if isTrue}}
         <span>{{aantalDeelnemers}}/{{capaciteit}}</span>
+        {{/if}}
     </div>
       </div>
       {{#if currentUser}}
-      <span class="delete" id="delete-les">Verwijder deze les</span>
+      <span class="delete" >Verwijder deze les</span>
 
       <table class="table table-striped">
       <thead>

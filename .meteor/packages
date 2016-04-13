@@ -24,3 +24,5 @@ momentjs:moment
 iron:router
 standard-minifiers
 ecmascript
+accounts-ui
+accounts-base

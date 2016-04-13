@@ -1,23 +1,25 @@
+
+
 if(Meteor.isClient){
 
+	Meteor.subscribe('publicAanmeldingen');
+		Template.afmelden.helpers({
+			aangemeld: function(){
+		// Om lessen op de juiste datum volgorde te zetten, moet eerst de input naar 'date' worden veranderd
+				// van dd/mm/jjjj naar een js date()... want nu pakt het alleen de dag en niet de maand.
+				
+				var userEmail = Meteor.user().emails[0].address;
 
-	// Meteor.subscribe('publicAanmeldingen');
+				 console.log(userEmail);
+				
+				return Aanmeldingen.find({email: userEmail});
+			}
 
-
-
-
-	// Open sessie by get var from url
-	  Router.route('/afmelden/:_id', function () {
-	    this.render('afmelden', {
-	      data: function () {
-	         var currentCode = this.params._id; 
-	         console.log('Getwaarde: ' + currentCode); 
-	         // console.log(Aanmeldingen.findOne({_id: currentCode}));
-	         return Aanmeldingen.findOne({_id: currentCode});     
-	      }
-	    });
-	  });
-
+		});
 
 
 }
+Template.afmelden.events({
+
+
+  });

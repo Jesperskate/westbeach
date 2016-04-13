@@ -69,7 +69,14 @@ Template.les.helpers({
 		// var month = monthNames[monthNr-1];
 
 	    return month;
- 	 }
+ 	 },
+	 isTrue: function(){
+	 	var x = Aanmeldingen.find({ idLes: this._id}).sport;
+	 	if (x = 'kitesurfen') {
+	 		return true;
+	 	};
+	    return false;
+	  }
 
 })
 

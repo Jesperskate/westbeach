@@ -10,15 +10,28 @@
 
     <div class="content-scrollable">
       <div class="wrapper-center">
-
+       {{#if currentUser}}
         <h1 class="title-page">Afmelden voor.</h1>
-        <p class="intro-page" > </p>
 
-  
-       <div class="rooster">
-   
-         {{email}}
-          </div> 
+
+          <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Naam</th>
+              <th>Email</th>
+              <th>Leeftijd</th>
+            </tr>
+          </thead>
+            <tbody>
+              {{#each aangemeld}}
+               {{> aanmelding}}  
+              {{/each}}
+            </tbody>
+          </table>
+ 
+
+
+          {{/if}}
       </div>
      
     </div>
