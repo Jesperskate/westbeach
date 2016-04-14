@@ -16,8 +16,7 @@ Template.rooster.events({
     var level = event.target.level.value;
     var capaciteit = event.target.capaciteit.value;
 
-    var steps = [];
-
+ 
 
 
     if (herhalen > 1 ){
@@ -39,6 +38,7 @@ Template.rooster.events({
             starttime:starttime,
             level:level,
             capaciteit:capaciteit,
+            status: 'gaat door',
             createdAt: new Date() // current time
           });
         console.log(i + ' week toegevoegd ');
@@ -70,7 +70,7 @@ Template.rooster.events({
   // Teller functie veld
   'click .sub': function(){
       var o = $('#numberSpinner').val();
-    if(o > 4){
+    if(o > 1){
       var o = o - 1;
         }
 
@@ -79,7 +79,7 @@ Template.rooster.events({
     'click .add': function(){
       var o = $('#numberSpinner').val();
       var o = parseInt(o);
-      if(o < 10){
+      if(o < 100){
       var o = o+1;
     }
       $('#numberSpinner').val(o);

@@ -70,9 +70,11 @@ Template.les.helpers({
 
 	    return month;
  	 },
-	 isTrue: function(){
-	 	var x = Aanmeldingen.find({ idLes: this._id}).sport;
-	 	if (x = 'kitesurfen') {
+ 	 // allee capaciteit weergeven bij Kitesurfen
+	 isKitesurfen: function(){
+	 	var x = Router.current().route.path();
+
+	 	if (x === '/kitesurfen') {
 	 		return true;
 	 	};
 	    return false;
@@ -82,10 +84,6 @@ Template.les.helpers({
 
 
 
-// Template.les.rendered=function() {
-    
-// }
-	
 	
 	
 
@@ -95,7 +93,22 @@ Template.les.events({
     		Lessen.remove(this._id);
     	}
     	
-    	// Meteor.call("deleteLesson", this._id);
+
+	      },   
+	   "click .status": function () {
+    		
+    		$(this).toggleClass('afgelast');
+    		if (this.status == undefined || this.status == 'goed'){
+    			Lessen.update({_id: this._id}, { $set: {status: 'afgelast' }});
+    		}
+    		else{
+
+    		Lessen.update({_id: this._id}, { $set: {status: 'goed' }});
+
+    		}
+
+
+    
 	      },    
 
 	"click #inschrijf-popup": function () {

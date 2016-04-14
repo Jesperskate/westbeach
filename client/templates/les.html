@@ -2,7 +2,7 @@
 <template name="les">
   <div class="les-moment">
     <!-- leermoment! {{displaydate date}} pakt date als input variable nu ;) -->
-    <div id="date-blue"><span id="number">{{displaydate date}}</span>
+    <div id="" class="date-blue {{status}}"><span id="number">{{displaydate date}}</span>
       <br>
       <span id="month">{{displaymonth date}}</span></div>
       <div class="box1">
@@ -10,12 +10,14 @@
         <span class="les-mid-top">{{starttime}}</span><br><span class="les-mid-bottom">{{level}}</span>
       </div>
      <div class="box2"><button id="inschrijf-popup" class="black-btn">Inschrijven</button><br>
-      {{#if isTrue}}
+      {{#if isKitesurfen}}
         <span>{{aantalDeelnemers}}/{{capaciteit}}</span>
         {{/if}}
     </div>
       </div>
       {{#if currentUser}}
+      <span class="status" >Status: {{status}}</span>
+
       <span class="delete" >Verwijder deze les</span>
 
       <table class="table table-striped">

@@ -23,7 +23,7 @@ momentjs:moment
 iron:router
 standard-minifiers
 ecmascript
-useraccounts:materialize
+useraccounts:bootstrap
 accounts-password
 underscore
 useraccounts:iron-routing
