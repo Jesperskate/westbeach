@@ -94,27 +94,27 @@ Template.les.events({
     	}
     	
 
-	      },   
-	   "click .status": function () {
-    		
-    	
+	   },   
+   	"click .status": function () {
 		
-    		
-    		if (this.status == undefined || this.status == 'goed'){
-    			Lessen.update({_id: this._id}, { $set: {status: 'afgelast' }});
-    		}
-    		else{
+	
+	
+	
+		if (this.status == undefined || this.status == 'goed'){
+			Lessen.update({_id: this._id}, { $set: {status: 'afgelast' }});
+		}
+		else{
 
-    		Lessen.update({_id: this._id}, { $set: {status: 'goed' }});
+		Lessen.update({_id: this._id}, { $set: {status: 'goed' }});
 
-    		}
-	      },    
-	   "click .mail": function () {
-    		
-    	
-			Meteor.popUp("aanpassenStatus");
-    		
-	      },    
+		}
+      },    
+   	"click .mail": function () {
+		
+		Session.set('idLesOpen', this._id);
+		Meteor.popUp("aanpassenStatus");
+		
+      },    
 
 	"click #inschrijf-popup": function () {
 
