@@ -98,7 +98,7 @@ Template.les.events({
 	   "click .status": function () {
     		
     	
-			Meteor.popUp("aanpassenStatus");
+		
     		
     		if (this.status == undefined || this.status == 'goed'){
     			Lessen.update({_id: this._id}, { $set: {status: 'afgelast' }});
@@ -108,9 +108,12 @@ Template.les.events({
     		Lessen.update({_id: this._id}, { $set: {status: 'goed' }});
 
     		}
-
-
-    
+	      },    
+	   "click .mail": function () {
+    		
+    	
+			Meteor.popUp("aanpassenStatus");
+    		
 	      },    
 
 	"click #inschrijf-popup": function () {

@@ -172,6 +172,42 @@ Template.inschrijfModal.events({
 
 });
 
+Template.aanpassenStatus.events({
+  'submit': function(event, template) {
+    event.preventDefault();
+    var idLes = event.target.idLes.value;
+    var toelichting = event.target.toelichting.value;
+
+
+    var found = Aanmeldingen.find({ idLes: Session.get('idLesOpen')}).fetch();
+    // maak een array van alle aanmeldingen
+    console.log(found);
+
+    var l = Aanmeldingen.find({ idLes: Session.get('idLesOpen')}).count();
+
+
+
+    for (var i = 0; i < l; i++) {
+      console.log(found[i].email);
+         Meteor.call('sendEmail',
+            found[i].email,
+            'jvoorendt@gmail.com',
+            'Aanpassing les',
+            'Beste '+found[i].naam+', \r \r De les waar u voor ingeschreven bent is aangepast! \r'+ toelichting+' \r\r Sportieve groeten! \r \r Westbeach'
+            );
+     
+    };
+
+
+
+        Meteor.popDown('inschrijfModal');
+         FlashMessages.sendSuccess("Mail verzonden");
+
+  }
+
+
+});
+
 
 // hier moet wat mee gedaan worden misschien! Study helpers...
 Template.inschrijfModal.helpers({
@@ -185,11 +221,13 @@ Template.inschrijfModal.helpers({
         return Lessen.findOne();
     }
 
+
 Template.aanpassenStatus.helpers({
   data: function(){
     return Lessen.findOne( { _id: Session.get('idLesOpen')});
   },
   deelnemers: function(){
+    // aanmeldingen worden te laat geladen, pas na een actie ...
     return Aanmeldingen.find( { idLes: Session.get('idLesOpen')});
   }
 
