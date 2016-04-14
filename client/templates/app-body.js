@@ -185,20 +185,20 @@ Template.inschrijfModal.helpers({
         return Lessen.findOne();
     }
 
+Template.aanpassenStatus.helpers({
+  data: function(){
+    return Lessen.findOne( { _id: Session.get('idLesOpen')});
+  },
+  deelnemers: function(){
+    return Aanmeldingen.find( { idLes: Session.get('idLesOpen')});
+  }
 
-if(Meteor.isClient){
+});
 
-
-  // Router.route('afmelden', {
-  //   path: '/afmelden/:_id',
-  //   template: 'afmelden',
-  //   data: function() {
-  //     console.log('We zijn bezig je aanmelding te vinden...'+ this.params._id);
-  //     return Aanmeldingen.findOne({_id: this.params._id});
-  //   }
-  // });
+  Template.aanpassenStatus.Lessen = function(){
+        return Lessen.findOne();
+    }
 
 
 
-}
 

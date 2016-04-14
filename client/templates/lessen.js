@@ -97,7 +97,9 @@ Template.les.events({
 	      },   
 	   "click .status": function () {
     		
-    		$(this).toggleClass('afgelast');
+    	
+			Meteor.popUp("aanpassenStatus");
+    		
     		if (this.status == undefined || this.status == 'goed'){
     			Lessen.update({_id: this._id}, { $set: {status: 'afgelast' }});
     		}
