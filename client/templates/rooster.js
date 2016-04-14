@@ -14,6 +14,7 @@ Template.rooster.events({
     var herhalen = event.target.herhalen.value;
 
     var level = event.target.level.value;
+    var info = event.target.info.value;
     var capaciteit = event.target.capaciteit.value;
 
  
@@ -22,7 +23,7 @@ Template.rooster.events({
     if (herhalen > 1 ){
       // Datum in date object
       var dated = new Date(date);
-      console.log('hi were in if');
+
 
       for (var i = 1; i <= herhalen; i++) {
         // add week or more PUINHOOP
@@ -38,7 +39,8 @@ Template.rooster.events({
             starttime:starttime,
             level:level,
             capaciteit:capaciteit,
-            status: 'gaat door',
+            status: 'goed',
+            info: info,
             createdAt: new Date() // current time
           });
         console.log(i + ' week toegevoegd ');
@@ -55,6 +57,7 @@ Template.rooster.events({
         starttime:starttime,
         level:level,
         capaciteit:capaciteit,
+        info: info,
         createdAt: new Date() // current time
       });
 
@@ -62,6 +65,7 @@ Template.rooster.events({
       event.target.sport.value = "";
       event.target.date.value = "";
       event.target.level.value = "";
+      event.target.info.value = "";
 
       Router.go(sport);
 

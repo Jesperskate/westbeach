@@ -14,12 +14,16 @@
         <span>{{aantalDeelnemers}}/{{capaciteit}}</span>
         {{/if}}
     </div>
+
+      </div>
+      <div  id="info-box">
+      {{info}}
       </div>
       {{#if currentUser}}
       <button class="status btn" >Status: {{status}}</button>
       <button class="mail btn" >Mail deelnemers</button>
 
-      <button class="delete btn" >Verwijder deze les</button>
+      <button class="delete btn" >Verwijder les</button>
 
       <table class="table table-striped">
       <thead>
