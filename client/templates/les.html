@@ -13,13 +13,13 @@
       
 
      <div class="box2"><button id="inschrijf-popup" class="black-btn">Inschrijven</button><br>
-      {{#if isKitesurfen}}
-        <span>{{aantalDeelnemers}}/{{capaciteit}}</span>
-        {{/if}}
-        <div id="" class="box3">{{#if weergaveStatus}}
+      <div id="" class="box3">{{#if weergaveStatus}}
           <p class="stoplicht {{status}}">{{status}}</p>  
           {{/if}}
       </div>
+      {{#if isKitesurfen}}
+        <span>{{aantalDeelnemers}}/{{capaciteit}}</span>
+        {{/if}}   
     </div>
 
       </div>
@@ -32,7 +32,6 @@
       <button class="mail btn" id="custombtn">Mail deelnemers</button>
       <button class="delete btn" id="custombtn">Verwijder les</button>
           {{/if}}
-          {{#if aangemeld}}
       <table class="table table-striped">
       <thead>
         <tr>
@@ -43,11 +42,13 @@
       </thead>
       <tbody>
         {{#each aangemeld}}
-          {{> aangemeld}}
+        {{#each aanmelding}}
+          {{> aanmelding}}
+        {{/each}}
         {{/each}}
       </tbody>
       </table>
-      {{/if}}
+      {{}}
    {{/if}}
 
   </template>
