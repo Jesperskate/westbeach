@@ -16,8 +16,9 @@
       {{#if isKitesurfen}}
         <span>{{aantalDeelnemers}}/{{capaciteit}}</span>
         {{/if}}
-        <div id="" class="box3">
+        <div id="" class="box3">{{#if weergaveStatus}}
           <p class="stoplicht {{status}}">{{status}}</p>  
+          {{/if}}
       </div>
     </div>
 

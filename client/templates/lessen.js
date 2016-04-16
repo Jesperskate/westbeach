@@ -48,22 +48,13 @@ Template.les.helpers({
 		return Aanmeldingen.find({ idLes: this._id}).count();
 
 	},
-
  	 displaydate: function (datemongo) {
 	    var date = String(datemongo).slice(8,10);
-
-
-
 	    return date ;
  	 },
  	 displaymonth: function (datemongo) {
-	
-// 	    var monthNames = [ "JAN", "FEB", "MRT", "APR", "MEI", "JUN",
-// "JUL", "AUG", "SEP", "OKT", "NOV", "DEC" ];
 
 		var month = String(datemongo).slice(4,7);
-
-		// var month = monthNames[monthNr-1];
 
 	    return month;
  	 },
@@ -75,7 +66,14 @@ Template.les.helpers({
 	 		return true;
 	 	};
 	    return false;
-	  }
+	  },
+	 weergaveStatus: function(){
+	 	if(this.status == 'goed'){
+	 		return false;
+
+	 	} 
+	 	else return true;
+	 }
 
 })
 
@@ -111,9 +109,7 @@ Template.les.events({
 		Meteor.popUp("aanpassenStatus");
 		
       },    
-
 	"click #inschrijf-popup": function () {
-
 		Session.set('idLesOpen', this._id);
 		if(Session.get('idLesOpen')){
 			console.log('session is set'+ Session.get('idLesOpen'));

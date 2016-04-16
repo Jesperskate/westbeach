@@ -134,7 +134,17 @@ Template.inschrijfModal.events({
     var timeOfLes = event.target.sportstarttime.value;
 
     if (idLes === undefined) { return false };
+    if (!email || email == undefined){
+      console.log('Email is vereist');
+         $('#email').css('border', '1px solid red'); 
+      return false;
 
+    }
+    if (!naam || naam === undefined) {
+      console.log('Naam is vereist');
+       $('#naam').css('border', '1px solid red'); 
+      return false;
+    }
 
       Aanmeldingen.insert({
         idLes: idLes,
