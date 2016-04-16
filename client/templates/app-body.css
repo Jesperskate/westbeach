@@ -88,15 +88,23 @@ body{
 .menu-footer-text:hover{
   text-decoration: none;
 }
+/*Kleuren status lessen (stoplicht)*/
 .afgelast{
-
-      width: 80px;
-    background-color: red;
+    background-color: #ea2e49;
     color: white;
-    height: 100%;
-    float: left;
 }
-
+.goed{
+    background-color: #a7c520;
+    color: white;
+}
+.verplaatst{
+    background-color: #f7941d;
+    color: white;
+}
+.stoplicht{
+  padding-left: 0px !important; 
+  padding-right: 0px; 
+}
 .date-blue{
   width:80px;
   background-color: #00ADEF;

@@ -58,6 +58,7 @@ Template.rooster.events({
         level:level,
         capaciteit:capaciteit,
         info: info,
+        status: 'goed',
         createdAt: new Date() // current time
       });
 

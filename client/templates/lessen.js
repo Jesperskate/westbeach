@@ -87,33 +87,23 @@ Template.les.events({
     	
 
 	   },   
-  //  	"click .status": function () {
-		// if (this.status == undefined || this.status == 'goed'){
-		// 	Lessen.update({_id: this._id}, { $set: {status: 'afgelast' }});
-		// 	document.getElementById('custombtn').style.cssText = 'background-color: red;';
-		// }
-		// // else if (this.status == 'afgelast' || this.status == "verplaatst") {
-		// // Lessen.update({_id: this._id}, { $set: {status: 'verplaatst' }});
-		// // document.getElementById('custombtn').style.cssText = 'background-color: yellow;';
-		// // }
-		// else{
-		// Lessen.update({_id: this._id}, { $set: {status: 'goed' }});
-		// document.getElementById('custombtn').style.cssText = 'background-color: green;';
-		// }
-  //     },  
+   	"click .status": function () {
+   		console.log(this.status);
+		if (this.status == undefined || this.status == 'goed'){
+			Lessen.update({_id: this._id}, { $set: {status: 'afgelast' }});
+		}
+		else if (this.status == 'afgelast' ) {
+			Lessen.update({_id: this._id}, { $set: {status: 'verplaatst' }});
+		}
+		else if (this.status == "verplaatst"){
+			Lessen.update({_id: this._id}, { $set: {status: 'goed' }});
+		}
+		else{
+			Lessen.update({_id: this._id}, { $set: {status: 'goed' }});
+		}
+      },  
 
-  // "click.status": function(){
-  // 	switch (this.status){
-  // 		case 'goed': 
-  // 			Lessen.update({_id: this._id}, { $set: {status: 'afgelast' }});
-		// 	document.getElementById('custombtn').style.cssText = 'background-color: red;';
-		// 	break; 
-		// case 'afgelast':
-		//   	Lessen.update({_id: this._id}, { $set: {status: 'verplaatst' }});
-		// 	document.getElementById('custombtn').style.cssText = 'background-color: blue;';
-		// 	break;
-  // 	}
-  // },
+
 
    	"click .mail": function () {
 		
@@ -131,38 +121,8 @@ Template.les.events({
 		Meteor.popUp("inschrijfModal");
 
 
-      },
-      "change #dropdownstatus": function(){
-
-      	var keuze = document.getElementById('dropdownstatus').value; 
-
-      	switch (keuze){
-      		case 'gaatdoor':
-      		document.getElementById('stoplicht').style.cssText = 'background: #a7c520;';
-      		document.getElementById('stoplicht').innerHTML = 'Gaat door!';
-      		break;
-
-      		case 'afgelast':
-      		document.getElementById('stoplicht').style.cssText = 'background: #ea2e49;';
-      		document.getElementById('stoplicht').innerHTML = 'Afgelast';
-      		break;
-
-      		case 'verplaatst':
-      		document.getElementById('stoplicht').style.cssText = 'background: #f7941d;';
-      		document.getElementById('stoplicht').innerHTML = 'Verplaatst!';
-      		break;
-
-      		default:
-      		document.getElementById('stoplicht').style.cssText = 'background: blue;';
-      	}
-      	// if (keuze == 'gaatdoor'){
-      	// 	document.getElementById('stoplicht').style.cssText = 'background-color: green;';
-      	// }
-      	// else
-      	// {
-      	// 	document.getElementById('stoplicht').style.cssText = 'background-color: orange;';      		
-      	// }
       }
+
   });	
 
 Template.aanmelding.events({

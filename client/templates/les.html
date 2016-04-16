@@ -17,7 +17,7 @@
         <span>{{aantalDeelnemers}}/{{capaciteit}}</span>
         {{/if}}
         <div id="" class="box3">
-          <p id="stoplicht">Gaat door!</p>  
+          <p class="stoplicht {{status}}">{{status}}</p>  
       </div>
     </div>
 
@@ -26,11 +26,9 @@
       {{info}}
       </div>
       {{#if currentUser}}
-      <select id="dropdownstatus">Status: {{status}}
-        <option value = 'gaatdoor'> Gaat door </option>
-        <option value = 'afgelast'> Les afgelast </option>
-        <option value ="verplaatst"> Les verplaatst </option>
-      </select>
+      <button class="status btn {{status}}">Status: {{status}}
+     
+      </button>
       <button class="mail btn" id="custombtn">Mail deelnemers</button>
 
       <button class="delete btn" id="custombtn">Verwijder les</button>

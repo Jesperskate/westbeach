@@ -14,13 +14,14 @@
             {{emailLocalPart}}
           </a>
           {{#if userMenuOpen}}
-            <a  class=" btn-secondary" href="{{pathFor 'rooster'}}">Nieuwe les</a>
-            <a  class=" btn-secondary" href="{{pathFor 'afmelden'}}">Afmelden</a>
-          
-            {{#if isInRole 'admin'}}
+             {{#if isInRole 'admin'}}
             <a class=" btn-secondary" href="{{pathFor 'dashboard'}}" >
               Dashboard </a>
               {{/if}}
+            <a  class=" btn-secondary" href="{{pathFor 'rooster'}}">Nieuwe les</a>
+            <a  class=" btn-secondary" href="{{pathFor 'afmelden'}}">Afmelden</a>
+          
+ 
             <a class="js-logout btn-secondary">Logout</a>
           {{/if}}
         </div>
@@ -192,6 +193,8 @@
           {{mooiedate data.date}}<br>
           {{data.starttime}}
 
+
+
  
         </small>
         {{/with}}
@@ -206,28 +209,23 @@
       </div>
       <div class="modal-body">
         <!-- Inschrijf form -->
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal mail-form" role="form">
           <!-- Hidden id van les om aan te melden -->
           {{#with Lessen}}
-          <div class="form-group hidden">
-            <label class="control-label col-sm-2" for="idLes">id Les:</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" name="idLes"  value="{{data._id}}" required>
-
-              <input type="text" class="hidden" name="sportnaam" value="{{data.sport}}">
-              <input type="text" class="" name="sportdate" value="{{data.date}}">
-              
-
+          <div class="form-group ">
+            
+            
+              <input type="text" class="form-control hidden" name="idLes"  value="{{data._id}}" required>
+              <input type="text" class="form-control hidden" name="sportnaam" value="{{data.sport}}">
+               
+               <label class="control-label col-sm-2" for="newsportdate">Nieuwe datum:</label>
+                <div class="col-sm-10">
+              <input type="text" class="form-control datepicker" name="newsportdate" value="">
+            
             </div>
           </div>
              {{/with}}
-<!--           <div class="form-group">
-            <label class="control-label col-sm-2" for="sportstarttime">Starttijd:</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" name="sportstarttime" value="{{data.starttime}}">
-            </div>
-          </div> -->
-          
+
 
           <div class="form-group">
             <label class="control-label col-sm-2" for="naam">Toelichting:</label>

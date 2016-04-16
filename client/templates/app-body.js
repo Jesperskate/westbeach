@@ -181,6 +181,17 @@ Template.aanpassenStatus.events({
     event.preventDefault();
     var idLes = event.target.idLes.value;
     var toelichting = event.target.toelichting.value;
+    var nieuwedatum = new Date(event.target.newsportdate.value);
+
+
+
+    if(nieuwedatum){
+      var datestring = String(nieuwedatum);
+      // Starttijd wordt uit date format gehaald, wel in US format!(AM/PM)
+      var starttime = datestring.slice(15,21);
+        Lessen.update({_id: Session.get('idLesOpen')}, { $set: {date: datestring, starttime: starttime }});
+      console.log('there is a new datum' + Lessen.update({_id: Session.get('idLesOpen')}, { $set: {date: nieuwedatum }}));
+    }
 
 
     var found = Aanmeldingen.find({ idLes: Session.get('idLesOpen')}).fetch();
@@ -204,13 +215,18 @@ Template.aanpassenStatus.events({
 
 
 
-        Meteor.popDown('inschrijfModal');
-         FlashMessages.sendSuccess("Mail verzonden");
+    Meteor.popDown('inschrijfModal');
+    FlashMessages.sendSuccess("Mail is verzonden");
 
   }
 
 
 });
+
+Template.aanpassenStatus.rendered = function() {
+  // format dat heb ik verwijderd omdat het toeveoegn van 7 dagen bijv. makkelijker gaat met de default format
+    $('.datepicker').datetimepicker({useCurrent: true, allowInputToggle: true});
+  }
 
 
 // hier moet wat mee gedaan worden misschien! Study helpers...
