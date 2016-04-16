@@ -27,13 +27,12 @@
       {{info}}
       </div>
       {{#if currentUser}}
-      <button class="status btn {{status}}">Status: {{status}}
-     
-      </button>
+          {{#if isInRole 'admin, instructeur'}}
+      <button class="status btn {{status}}">Status: {{status}}</button>
       <button class="mail btn" id="custombtn">Mail deelnemers</button>
-
       <button class="delete btn" id="custombtn">Verwijder les</button>
-
+          {{/if}}
+          {{#if aangemeld}}
       <table class="table table-striped">
       <thead>
         <tr>
@@ -43,16 +42,16 @@
         </tr>
       </thead>
       <tbody>
-        {{#each aanmeldingen}}
-          {{> aanmelding}}
+        {{#each aangemeld}}
+          {{> aangemeld}}
         {{/each}}
       </tbody>
       </table>
+      {{/if}}
    {{/if}}
 
   </template>
-
-
+    
 <template name="aanmelding">
       <tr>
         <td>{{naam}}</td>
