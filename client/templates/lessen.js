@@ -133,7 +133,35 @@ Template.les.events({
 
       },
       "change #dropdownstatus": function(){
-      	console.log(this.value);
+
+      	var keuze = document.getElementById('dropdownstatus').value; 
+
+      	switch (keuze){
+      		case 'gaatdoor':
+      		document.getElementById('stoplicht').style.cssText = 'background: #a7c520;';
+      		document.getElementById('stoplicht').innerHTML = 'Gaat door!';
+      		break;
+
+      		case 'afgelast':
+      		document.getElementById('stoplicht').style.cssText = 'background: #ea2e49;';
+      		document.getElementById('stoplicht').innerHTML = 'Afgelast';
+      		break;
+
+      		case 'verplaatst':
+      		document.getElementById('stoplicht').style.cssText = 'background: #f7941d;';
+      		document.getElementById('stoplicht').innerHTML = 'Verplaatst!';
+      		break;
+
+      		default:
+      		document.getElementById('stoplicht').style.cssText = 'background: blue;';
+      	}
+      	// if (keuze == 'gaatdoor'){
+      	// 	document.getElementById('stoplicht').style.cssText = 'background-color: green;';
+      	// }
+      	// else
+      	// {
+      	// 	document.getElementById('stoplicht').style.cssText = 'background-color: orange;';      		
+      	// }
       }
   });	
 
