@@ -115,7 +115,6 @@ font-size: 30px;
     display: block;
 }
 
-<<<<<<< HEAD
 .box3 {
   width:100px;
   height: 30px; 
@@ -132,7 +131,7 @@ font-size: 30px;
   font-size: 1em; 
 }
 
-=======
+
 .image-container {
     background: #31708f;
    width: 100%;
@@ -169,5 +168,4 @@ font-size: 30px;
    width: 100%; 
    text-shadow: 0 1px 0 black;
 }
->>>>>>> origin/master
 
