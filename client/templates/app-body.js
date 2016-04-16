@@ -130,6 +130,8 @@ Template.inschrijfModal.events({
     var email = event.target.email.value;
     var naam = event.target.naam.value;
     var leeftijdsgroep = event.target.leeftijdsgroep.value;
+    var dateOfLes = event.target.sportdate.value;
+    var timeOfLes = event.target.sportstarttime.value;
 
     if (idLes === undefined) { return false };
 
@@ -139,6 +141,8 @@ Template.inschrijfModal.events({
         email: email,
         naam: naam,
         leeftijd: leeftijdsgroep,
+        initDate: dateOfLes,
+        initTime: timeOfLes,
         createdAt: new Date() // current time
       });
 
