@@ -130,6 +130,8 @@ Template.inschrijfModal.events({
     var email = event.target.email.value;
     var naam = event.target.naam.value;
     var leeftijdsgroep = event.target.leeftijdsgroep.value;
+    var dateOfLes = event.target.sportdate.value;
+    var timeOfLes = event.target.sportstarttime.value;
 
     if (idLes === undefined) { return false };
 
@@ -139,6 +141,8 @@ Template.inschrijfModal.events({
         email: email,
         naam: naam,
         leeftijd: leeftijdsgroep,
+        initDate: dateOfLes,
+        initTime: timeOfLes,
         createdAt: new Date() // current time
       });
 
@@ -213,13 +217,18 @@ Template.aanpassenStatus.events({
 Template.inschrijfModal.helpers({
   data: function(){
     return Lessen.findOne( { _id: Session.get('idLesOpen')});
+  },
+  mooiedate: function(datestring){
+    var d = String(datestring).slice(0,16); 
+    return d;
+  },
+  Lessen: function(){
+    return Lessen.findOne();
   }
 
 });
 
-  Template.inschrijfModal.Lessen = function(){
-        return Lessen.findOne();
-    }
+
 
 
 Template.aanpassenStatus.helpers({
@@ -229,13 +238,18 @@ Template.aanpassenStatus.helpers({
   deelnemers: function(){
     // aanmeldingen worden te laat geladen, pas na een actie ...
     return Aanmeldingen.find( { idLes: Session.get('idLesOpen')});
+  },
+  mooiedate: function(datestring){
+    var d = String(datestring).slice(0,16); 
+    return d;
+  },
+  Lessen: function(){
+    return Lessen.findOne();
   }
 
 });
 
-  Template.aanpassenStatus.Lessen = function(){
-        return Lessen.findOne();
-    }
+ 
 
 
 

@@ -20,6 +20,23 @@ if(Meteor.isClient){
 
 }
 Template.afmelden.events({
-
+    "click .deleteAanmelding": function () {
+    	if(confirm('Weet u zeker dat u zich wil afmelden voor: '+this.initDate+' ?')){
+    		Aanmeldingen.remove(this._id);
+    	}
+    }
 
   });
+
+Template.afmelden.helpers({
+
+    noUser: function () {
+        var user = Meteor.user();
+
+        if (!user) {
+            return true;
+        };
+    }
+});
+
+

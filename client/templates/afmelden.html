@@ -10,6 +10,12 @@
 
     <div class="content-scrollable">
       <div class="wrapper-center">
+        {{#if noUser}}
+        <h1>Afmelden.</h1>
+        <p>Om af te melden voor een les is het nodig om eerst in te loggen.</p>
+          <!-- {{> signin}} -->
+
+        {{/if}}
        {{#if currentUser}}
         <h1 class="title-page">Afmelden voor.</h1>
 
@@ -18,14 +24,17 @@
           <thead>
             <tr>
               <th>Naam</th>
-              <th>Email</th>
-              <th>Leeftijd</th>
+              <th>Datum</th> 
               <th>Actie</th>
             </tr>
           </thead>
             <tbody>
               {{#each aangemeld}}
-               {{> aanmelding}}  
+                 <tr>
+                  <td>{{naam}}</td>
+                  <td>{{initDate}}</td>
+                  <td class="deleteAanmelding">X</td>
+                </tr>
               {{/each}}
             </tbody>
           </table>
