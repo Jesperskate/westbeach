@@ -1,8 +1,5 @@
 if(Meteor.isClient){
 
-
-
-
 Template.kitesurfen.helpers({
 	lessen: function(){
 // Om lessen op de juiste datum volgorde te zetten, moet eerst de input naar 'date' worden veranderd
@@ -82,11 +79,6 @@ Template.les.helpers({
 
 })
 
-
-
-	
-	
-
 Template.les.events({
     "click .delete": function () {
     	if(confirm('Weet u zeker dat u deze les '+this.sport+' om'+this.starttime+'wilt verwijderen?')){
@@ -95,20 +87,34 @@ Template.les.events({
     	
 
 	   },   
-   	"click .status": function () {
-		
-	
-	
-	
-		if (this.status == undefined || this.status == 'goed'){
-			Lessen.update({_id: this._id}, { $set: {status: 'afgelast' }});
-		}
-		else{
+  //  	"click .status": function () {
+		// if (this.status == undefined || this.status == 'goed'){
+		// 	Lessen.update({_id: this._id}, { $set: {status: 'afgelast' }});
+		// 	document.getElementById('custombtn').style.cssText = 'background-color: red;';
+		// }
+		// // else if (this.status == 'afgelast' || this.status == "verplaatst") {
+		// // Lessen.update({_id: this._id}, { $set: {status: 'verplaatst' }});
+		// // document.getElementById('custombtn').style.cssText = 'background-color: yellow;';
+		// // }
+		// else{
+		// Lessen.update({_id: this._id}, { $set: {status: 'goed' }});
+		// document.getElementById('custombtn').style.cssText = 'background-color: green;';
+		// }
+  //     },  
 
-		Lessen.update({_id: this._id}, { $set: {status: 'goed' }});
+  // "click.status": function(){
+  // 	switch (this.status){
+  // 		case 'goed': 
+  // 			Lessen.update({_id: this._id}, { $set: {status: 'afgelast' }});
+		// 	document.getElementById('custombtn').style.cssText = 'background-color: red;';
+		// 	break; 
+		// case 'afgelast':
+		//   	Lessen.update({_id: this._id}, { $set: {status: 'verplaatst' }});
+		// 	document.getElementById('custombtn').style.cssText = 'background-color: blue;';
+		// 	break;
+  // 	}
+  // },
 
-		}
-      },    
    	"click .mail": function () {
 		
 		Session.set('idLesOpen', this._id);
@@ -125,9 +131,10 @@ Template.les.events({
 		Meteor.popUp("inschrijfModal");
 
 
+      },
+      "change #dropdownstatus": function(){
+      	console.log(this.value);
       }
-
-
   });	
 
 Template.aanmelding.events({
@@ -137,7 +144,6 @@ Template.aanmelding.events({
     	}    
 	 }   
   });
-
 
 
 Meteor.methods({

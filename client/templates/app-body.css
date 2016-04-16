@@ -109,8 +109,26 @@ body{
 font-size: 30px;
 }
 .date-blue #month{
-letter-spacing: .3em;
+    letter-spacing: .3em;
     text-indent: .3em;
     text-transform: uppercase;
     display: block;
 }
+
+.box3 {
+  width:100px;
+  height: 30px; 
+  background-color: #009CD7;
+  color: white;
+  height: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dropdownstatus{
+  background: #00ADEF; 
+  color: white;
+  font-size: 1em; 
+}
+
+

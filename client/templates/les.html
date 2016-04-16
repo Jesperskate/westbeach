@@ -9,10 +9,16 @@
         <img src="/img/{{sport}}-icon.png" class="small-icon">
         <span class="les-mid-top">{{starttime}}</span><br><span class="les-mid-bottom">{{level}}</span>
       </div>
+
+      
+
      <div class="box2"><button id="inschrijf-popup" class="black-btn">Inschrijven</button><br>
       {{#if isKitesurfen}}
         <span>{{aantalDeelnemers}}/{{capaciteit}}</span>
         {{/if}}
+        <div id="" class="box3">
+          <p id="stoplicht">Gaat door!</p>  
+      </div>
     </div>
 
       </div>
@@ -20,10 +26,14 @@
       {{info}}
       </div>
       {{#if currentUser}}
-      <button class="status btn" >Status: {{status}}</button>
-      <button class="mail btn" >Mail deelnemers</button>
+      <select id="dropdownstatus">Status: {{status}}
+        <option value = 'gaatdoor'> Gaat door </option>
+        <option id='1002'> Les afgelast </option>
+        <option id='1003'> Les verplaatst </option>
+      </select>
+      <button class="mail btn" id="custombtn">Mail deelnemers</button>
 
-      <button class="delete btn" >Verwijder les</button>
+      <button class="delete btn" id="custombtn">Verwijder les</button>
 
       <table class="table table-striped">
       <thead>
