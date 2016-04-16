@@ -173,7 +173,7 @@ Template.inschrijfModal.events({
             email,
             'jvoorendt@gmail.com',
             'Inschrijving gelukt',
-            'Beste '+naam+', \r \r U bent nu ingeschreven voor: \r '+ sportnaam+ ' - '+sportdate+' - '+sportstarttime+'\r \r Uitschrijven kan via deze link: \r http://localhost:3000/'+huidigeAanmelding._id+' \r\r Sportieve groeten! \r \r Westbeach');
+            'Beste '+naam+', \r \r U bent nu ingeschreven voor: \r '+ sportnaam+ ' - '+sportdate+' - '+sportstarttime+'\r \r Uitschrijven kan via deze link: \r http://localhost:3000/afmelden \r\r Sportieve groeten! \r \r Westbeach');
       if(Meteor.call('sendEmail')){
 
       }
@@ -191,17 +191,20 @@ Template.aanpassenStatus.events({
     event.preventDefault();
     var idLes = event.target.idLes.value;
     var toelichting = event.target.toelichting.value;
-    var nieuwedatum = new Date(event.target.newsportdate.value);
-
-
+    var nieuwedatum = event.target.newsportdate.value;
 
     if(nieuwedatum){
-      var datestring = String(nieuwedatum);
+      var x = new Date(nieuwedatum);
+      console.log('string x: '+x);
+      var datestring = String(x);
       // Starttijd wordt uit date format gehaald, wel in US format!(AM/PM)
-      var starttime = datestring.slice(15,21);
-        Lessen.update({_id: Session.get('idLesOpen')}, { $set: {date: datestring, starttime: starttime }});
-      console.log('there is a new datum' + Lessen.update({_id: Session.get('idLesOpen')}, { $set: {date: nieuwedatum }}));
-    }
+      var starttime = datestring.slice(16,21);
+
+
+      Lessen.update({_id: Session.get('idLesOpen')}, { $set: {date: x, starttime: starttime }});
+      
+
+      }
 
 
     var found = Aanmeldingen.find({ idLes: Session.get('idLesOpen')}).fetch();
@@ -210,7 +213,7 @@ Template.aanpassenStatus.events({
 
     var l = Aanmeldingen.find({ idLes: Session.get('idLesOpen')}).count();
 
-
+    var datumverandering = 'Nieuw lesmoment is: '+ datestring;
 
     for (var i = 0; i < l; i++) {
       console.log(found[i].email);
@@ -220,22 +223,22 @@ Template.aanpassenStatus.events({
             'Aanpassing les',
             'Beste '+found[i].naam+', \r \r De les waar u voor ingeschreven bent is aangepast! \r'+ toelichting+' \r\r Sportieve groeten! \r \r Westbeach'
             );
-     
+     FlashMessages.sendSuccess("Mail is verzonden");
     };
+    
 
+    Meteor.popDown('aanpassenStatus');
 
-
-    Meteor.popDown('inschrijfModal');
-    FlashMessages.sendSuccess("Mail is verzonden");
 
   }
-
-
 });
 
 Template.aanpassenStatus.rendered = function() {
   // format dat heb ik verwijderd omdat het toeveoegn van 7 dagen bijv. makkelijker gaat met de default format
-    $('.datepicker').datetimepicker({useCurrent: true, allowInputToggle: true});
+    $('.datepicker').datetimepicker({
+      useCurrent: true, 
+      allowInputToggle: true
+    });
   }
 
 
