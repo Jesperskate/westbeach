@@ -196,9 +196,11 @@
         {{/with}}
         <br>
         <hr>
+
         {{#each deelnemers}}
-        {{name}}
-        {{email}}
+        <li>{{email}}</li>
+        {{else}}
+        <p>Deze les heeft geen deelnemers.</p>
         {{/each}}
       </div>
       <div class="modal-body">

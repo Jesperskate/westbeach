@@ -221,13 +221,14 @@ Template.inschrijfModal.helpers({
   mooiedate: function(datestring){
     var d = String(datestring).slice(0,16); 
     return d;
+  },
+  Lessen: function(){
+    return Lessen.findOne();
   }
 
 });
 
-  Template.inschrijfModal.Lessen = function(){
-        return Lessen.findOne();
-    }
+
 
 
 Template.aanpassenStatus.helpers({
@@ -241,13 +242,14 @@ Template.aanpassenStatus.helpers({
   mooiedate: function(datestring){
     var d = String(datestring).slice(0,16); 
     return d;
+  },
+  Lessen: function(){
+    return Lessen.findOne();
   }
 
 });
 
-  Template.aanpassenStatus.Lessen = function(){
-        return Lessen.findOne();
-    }
+ 
 
 
 
