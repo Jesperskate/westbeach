@@ -224,6 +224,9 @@ Template.inschrijfModal.helpers({
   },
   Lessen: function(){
     return Lessen.findOne();
+  },
+  currentEmail: function(){
+    return Meteor.user().emails[0].address;
   }
 
 });
