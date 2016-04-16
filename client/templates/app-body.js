@@ -213,6 +213,10 @@ Template.aanpassenStatus.events({
 Template.inschrijfModal.helpers({
   data: function(){
     return Lessen.findOne( { _id: Session.get('idLesOpen')});
+  },
+  mooiedate: function(datestring){
+    var d = String(datestring).slice(0,16); 
+    return d;
   }
 
 });
@@ -229,6 +233,10 @@ Template.aanpassenStatus.helpers({
   deelnemers: function(){
     // aanmeldingen worden te laat geladen, pas na een actie ...
     return Aanmeldingen.find( { idLes: Session.get('idLesOpen')});
+  },
+  mooiedate: function(datestring){
+    var d = String(datestring).slice(0,16); 
+    return d;
   }
 
 });
