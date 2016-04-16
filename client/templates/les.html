@@ -19,12 +19,13 @@
       <div  id="info-box">
       {{info}}
       </div>
-      {{#if currentUser}}
-      <button class="status btn" >Status: {{status}}</button>
-      <button class="mail btn" >Mail deelnemers</button>
 
-      <button class="delete btn" >Verwijder les</button>
-
+            {{#if isInRole 'admin'}}
+              <button class="status btn" >Status: {{status}}</button>
+              <button class="mail btn" >Mail deelnemers</button>
+              <button class="delete btn" >Verwijder les</button>
+            {{/if}}
+       {{#if currentUser}}
       <table class="table table-striped">
       <thead>
         <tr>

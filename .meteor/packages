@@ -22,9 +22,12 @@ blaze-html-templates
 momentjs:moment
 iron:router
 ecmascript
-useraccounts:bootstrap
 accounts-password
 underscore
 useraccounts:iron-routing
+<<<<<<< Updated upstream
 standard-minifier-css
 standard-minifier-js
+=======
+useraccounts:bootstrap
+>>>>>>> Stashed changes
