@@ -92,15 +92,15 @@ Template.les.helpers({
 })
 
 Template.les.events({
-    "click .delete": function () {
-    	if(confirm('Weet u zeker dat u deze les '+this.sport+' om'+this.starttime+'wilt verwijderen?')){
-    		Lessen.remove(this._id);
-    	}
-    	
+	"click .delete": function () {
+		if(confirm('Weet u zeker dat u deze les '+this.sport+' om'+this.starttime+'wilt verwijderen?')){
+			Lessen.remove(this._id);
+		}
+		
 
 	   },   
-   	"click .status": function () {
-   		console.log(this.status);
+	"click .status": function () {
+			console.log(this.status);
 		if (this.status == undefined || this.status == 'goed'){
 			Lessen.update({_id: this._id}, { $set: {status: 'afgelast' }});
 		}
@@ -113,10 +113,12 @@ Template.les.events({
 		else{
 			Lessen.update({_id: this._id}, { $set: {status: 'goed' }});
 		}
-      },  
-
-
-
+	  },
+	// Fundtie om een row extra zichtbaar et maken na een click op een aanmelding
+	// "click .aanmelding-row": function(event) {
+	// 	console.log($(event.target));
+	//   	$(event.target).closest('aanmelding-row2').toggle();
+	//   },  
    	"click .mail": function () {
 		
 		Session.set('idLesOpen', this._id);

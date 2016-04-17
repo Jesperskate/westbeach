@@ -38,6 +38,7 @@
           <th>Naam</th>
           <th>Email</th>
           <th>Leeftijd</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -51,10 +52,14 @@
   </template>
     
 <template name="aanmelding">
-      <tr>
+      <tr class="aanmelding-row">
         <td>{{naam}}</td>
         <td>{{email}}</td>
         <td>{{leeftijd}}</td>
         <td class="deleteAanmelding">X</td>
-      </tr>
+      </tr>      
+<!--       <div class="aanmelding-row2">
+        <span>{{vraag}}</span>
+        <span>0612345678</span>
+      </div> -->
 </template>

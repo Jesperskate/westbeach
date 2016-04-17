@@ -129,6 +129,8 @@ Template.inschrijfModal.events({
     var idLes = event.target.idLes.value;
     var email = event.target.email.value;
     var naam = event.target.naam.value;
+    var telefoon = event.target.telefoon.value;
+    var vraag = event.target.vraag.value;
     var leeftijdsgroep = event.target.leeftijdsgroep.value;
     var dateOfLes = event.target.sportdate.value;
     var timeOfLes = event.target.sportstarttime.value;
@@ -151,6 +153,8 @@ Template.inschrijfModal.events({
         email: email,
         naam: naam,
         leeftijd: leeftijdsgroep,
+        telefoon: telefoon,
+        vraag: vraag,
         initDate: dateOfLes,
         initTime: timeOfLes,
         createdAt: new Date() // current time
