@@ -15,10 +15,10 @@
           </a>
           {{#if userMenuOpen}}
              {{#if isInRole 'admin'}}
-            <a class=" btn-secondary" href="{{pathFor 'dashboard'}}" >
-              Dashboard </a>
+            <a class=" btn-secondary" href="{{pathFor 'dashboard'}}" >Dashboard </a>
+              <a  class=" btn-secondary" href="{{pathFor 'rooster'}}">Nieuwe les</a>
             {{/if}}
-            {{#if isInRole 'instructeur' 'admin'}}
+            {{#if isInRole 'instructeur'}}
             <a  class=" btn-secondary" href="{{pathFor 'rooster'}}">Nieuwe les</a>
             {{/if}}
             <a  class=" btn-secondary" href="{{pathFor 'afmelden'}}">Afmelden</a>
