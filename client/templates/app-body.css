@@ -191,6 +191,7 @@ font-size: 30px;
 #tabelaanmelding{
   margin-bottom: 20px;
   margin-top: 25px;
+  text-align: left; 
 }
 .btn{
   border-radius: 0px; 
