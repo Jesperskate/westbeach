@@ -25,7 +25,7 @@ Template.rooster.events({
       var dated = new Date(date);
 
 
-      for (var i = 1; i <= herhalen; i++) {
+      for (var i = 1; i <= (herhalen - 1); i++) {
         // add week or more PUINHOOP
         var dagentoevoegen = i * 7;
         var nextweek = moment(dated).add(dagentoevoegen, 'days');
@@ -44,6 +44,7 @@ Template.rooster.events({
             createdAt: new Date() // current time
           });
         console.log(i + ' week toegevoegd ');
+        console.log(herhalen);
         
       };
   
@@ -78,7 +79,6 @@ Template.rooster.events({
     if(o > 1){
       var o = o - 1;
         }
-
       $('#numberSpinner').val(o);
   },
     'click .add': function(){
