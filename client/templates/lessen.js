@@ -10,7 +10,7 @@ Template.les.helpers({
 				var userEmail = Meteor.user().emails[0].address;
 					// this._id  idLes
 					
-				return Aanmeldingen.find({email: userEmail});
+				return Aanmeldingen.find({email: userEmail, idLes: this._id});
 			}
 })
 
