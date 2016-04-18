@@ -85,8 +85,8 @@ Template.rooster.events({
       var o = $('#numberSpinner').val();
       var o = parseInt(o);
       if(o < 100){
-      var o = o+1;
-    }
+          var o = o+1;
+      }
       $('#numberSpinner').val(o);
   }
 });

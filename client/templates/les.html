@@ -43,10 +43,16 @@
           <th></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody>     
+      {{#if isInRole 'admin, instructeur'}}
+      {{#each aanmeldingen}}
+      {{> aanmelding}}
+      {{/each}}
+      {{else}}
         {{#each aangemeld}}
           {{> aanmelding}}
         {{/each}}
+      {{/if}}   
       </tbody>
       </table>
    {{/if}}
