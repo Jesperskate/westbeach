@@ -20,9 +20,7 @@
             {{#if isInRole 'admin, instructeur'}}
             <a  class=" btn-secondary" href="{{pathFor 'rooster'}}">Nieuwe les</a>
             {{/if}}
-            {{#unless isInRole 'admin, instructeur'}}
             <a  class=" btn-secondary" href="{{pathFor 'afmelden'}}">Afmelden</a>
-            {{/unless}}
             <a class="js-logout btn-secondary">Logout</a>
           {{/if}}
         </div>
