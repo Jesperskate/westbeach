@@ -29,6 +29,15 @@
             </tr>
           </thead>
             <tbody>
+              {{#if isInRole 'admin'}}
+              {{#each Adminaangemeld}}
+                 <tr>
+                  <td>{{naam}}</td>
+                  <td>{{initDate}}</td>
+                  <td class="deleteAanmelding">X</td>
+                </tr>
+              {{/each}}
+              {{else}}
               {{#each aangemeld}}
                  <tr>
                   <td>{{naam}}</td>
@@ -36,6 +45,7 @@
                   <td class="deleteAanmelding">X</td>
                 </tr>
               {{/each}}
+              {{/if}}
             </tbody>
           </table>
  
