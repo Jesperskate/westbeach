@@ -27,7 +27,7 @@
       </div>
 
       {{#if currentUser}}
-          {{#if isInRole 'admin, instructeur'}}
+          {{#if isInRole 'admin' 'instructeur'}}
       <div id='adminknoppen'>
       <button class="status btn {{status}}">Status: {{status}}</button>
       <button class="mail btn" id="custombtn">Mail deelnemers</button>
