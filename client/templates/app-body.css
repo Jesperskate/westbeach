@@ -192,6 +192,7 @@ font-size: 30px;
 }
 .btn{
   border-radius: 0px; 
+  margin-bottom: 5px;
 }
 #custombtn{
   border-radius: 0px; 
@@ -213,9 +214,12 @@ font-size: 30px;
       display: none;
     }
   }
-
-
   .aanmelding-row2{
     width: 100%;
     
   }
+  #adminknoppentabel{
+    border-collapse: separate;
+    border-spacing: 5px;
+  }
+  
