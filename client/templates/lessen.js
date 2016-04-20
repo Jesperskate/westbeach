@@ -133,7 +133,11 @@ Template.les.events({
 		Meteor.popUp("inschrijfModal");
 
 
+      },
+      "click .aanmelding-row": function(){
+      	$('.telEnVraag').toggle();
       }
+
 
   });	
 

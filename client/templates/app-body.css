@@ -177,6 +177,9 @@ font-size: 30px;
   margin-top: 35px; 
   margin-bottom: 20px;
 }
+#adminknoppen .btn{
+  margin-bottom: 5px;
+}
 #info-box{
   text-align: left; 
   padding-left: 96px; 
@@ -209,4 +212,10 @@ font-size: 30px;
     .slogan-in-image{
       display: none;
     }
+  }
+
+
+  .aanmelding-row2{
+    width: 100%;
+    
   }
