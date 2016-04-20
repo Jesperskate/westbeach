@@ -189,6 +189,9 @@ font-size: 30px;
   margin-bottom: 20px;
   margin-top: 25px;
   text-align: left; 
+  display: table;
+  table-layout: auto;
+  width: 100%;
 }
 .btn{
   border-radius: 0px; 
