@@ -29,14 +29,8 @@ body{
 .table-striped th{
   font-weight: 600;
 }
-   @media screen and (max-width: 820px) {
-    .box1{
-      font-size: 16px;
-    }
-    .slogan-in-image{
-      display: none;
-    }
-  }
+
+
 
 #showme{
 	display: none;
@@ -208,3 +202,11 @@ font-size: 30px;
   text-align: left; 
 }
 
+@media screen and (max-width: 820px) {
+    .box1{
+      font-size: 16px;
+    }
+    .slogan-in-image{
+      display: none;
+    }
+  }
