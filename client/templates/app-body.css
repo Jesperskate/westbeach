@@ -29,9 +29,6 @@ body{
 .table-striped th{
   font-weight: 600;
 }
-
-
-
 #showme{
 	display: none;
 }
@@ -226,4 +223,10 @@ font-size: 30px;
     border-collapse: separate;
     border-spacing: 5px;
   }
-  
+  #content-container{
+    overflow: scroll;
+  }
+  #content-scrollabe{
+    overflow-x: scroll;
+  }
+

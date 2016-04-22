@@ -23,15 +23,15 @@ Template.join.events({
     var errors = {};
 
     if (! email) {
-      errors.email = 'Email required';
+      errors.email = 'Email vereist';
     }
 
     if (! password) {
-      errors.password = 'Password required';
+      errors.password = 'Wachtwoord vereist';
     }
 
     if (confirm !== password) {
-      errors.confirm = 'Please confirm your password';
+      errors.confirm = 'Bevestig uw wachtwoord alstublieft';
     }
 
     Session.set(ERRORS_KEY, errors);
