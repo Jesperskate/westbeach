@@ -175,9 +175,9 @@ Template.inschrijfModal.events({
 
       Meteor.call('sendEmail',
             email,
-            'jvoorendt@gmail.com',
+            'info@westbeach.nl',
             'Inschrijving gelukt',
-            'Beste '+naam+', \r \r U bent nu ingeschreven voor: \r '+ sportnaam+ ' - '+sportdate+' - '+sportstarttime+'\r \r Uitschrijven kan via deze link: \r http://localhost:3000/afmelden \r\r Sportieve groeten! \r \r Westbeach');
+            'Beste '+naam+', \r \r U bent nu ingeschreven voor: \r '+ sportnaam+ ' - '+sportdate+' - '+sportstarttime+'\r \r Uitschrijven kan via deze link: \r http://localhost:3000/afmelden \r\r Sportieve groeten, \r \r Westbeach');
       if(Meteor.call('sendEmail')){
 
       }
@@ -223,9 +223,9 @@ Template.aanpassenStatus.events({
       console.log(found[i].email);
          Meteor.call('sendEmail',
             found[i].email,
-            'jvoorendt@gmail.com',
+            'info@westbeach.nl',
             'Aanpassing les',
-            'Beste '+found[i].naam+', \r \r De les waar u voor ingeschreven bent is aangepast! \r'+ toelichting+' \r\r Sportieve groeten! \r \r Westbeach'
+            'Beste '+found[i].naam+', \r \r De les waarvoor je je hebt ingeschreven is aangepast. \r '+ datumverandering+' \r \r'+ toelichting+' \r\r Sportieve groeten, \r \r Westbeach'
             );
      FlashMessages.sendSuccess("Mail is verzonden");
     };
