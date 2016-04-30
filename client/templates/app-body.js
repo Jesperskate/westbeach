@@ -147,6 +147,11 @@ Template.inschrijfModal.events({
        $('#naam').css('border', '1px solid red'); 
       return false;
     }
+    if (!telefoon || telefoon === undefined) {
+      console.log('Telefoonnummer is vereist');
+       $('#telefoon').css('border', '1px solid red'); 
+      return false;
+    }
 
       Aanmeldingen.insert({
         idLes: idLes,
