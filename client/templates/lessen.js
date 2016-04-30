@@ -40,7 +40,7 @@ Template.home.helpers({
 });	
 Template.bootcamp.helpers({
 	lessen: function(){
-		return Lessen.find({sport:'bootcamp', 'date' : { $gte : new Date()}},{ sort: { 'date' : 1 , , 'createdAt': 1} });
+		return Lessen.find({sport:'bootcamp', 'date' : { $gte : new Date()}},{ sort: { 'date' : 1 , 'createdAt': 1} });
 	}
 
 });
