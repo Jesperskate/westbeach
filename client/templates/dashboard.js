@@ -13,10 +13,10 @@ Template.dashboard.helpers({
 
 Template.dashboard.helpers({
   users: function() {
-    var users = Meteor.users.find();
+    var users = Meteor.users.find({}, {sort: {'emails' : 1}});
 
     if ( users ) {
-      return users;
+        return users;
     }
   },
 });

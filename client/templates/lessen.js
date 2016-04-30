@@ -8,7 +8,6 @@ Template.les.helpers({
 				// van dd/mm/jjjj naar een js date()... want nu pakt het alleen de dag en niet de maand.
 				
 				var userEmail = Meteor.user().emails[0].address;
-					// this._id  idLes
 					
 				return Aanmeldingen.find({email: userEmail, idLes: this._id});
 			}
@@ -101,6 +100,7 @@ Template.les.events({
 	   },   
 	"click .status": function () {
 			console.log(this.status);
+			console.log(this._id);
 		if (this.status == undefined || this.status == 'goed'){
 			Lessen.update({_id: this._id}, { $set: {status: 'afgelast' }});
 		}

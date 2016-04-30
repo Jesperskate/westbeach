@@ -43,9 +43,7 @@ Template.rooster.events({
             info: info,
             createdAt: new Date() // current time
           });
-        console.log(i + ' week toegevoegd ');
-        console.log(herhalen);
-        
+        console.log(i + ' week toegevoegd ');        
       };
   
 
