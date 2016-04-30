@@ -94,7 +94,6 @@ Template.les.helpers({
 	 	} 
 	 	else return true;
 	 }
-
 })
 
 Template.les.events({
