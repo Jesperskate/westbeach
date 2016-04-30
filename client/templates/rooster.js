@@ -91,8 +91,8 @@ Template.rooster.events({
 
 Template.rooster.rendered = function() {
   // format dat heb ik verwijderd omdat het toeveoegn van 7 dagen bijv. makkelijker gaat met de default format
-    $('.datepicker').datetimepicker({useCurrent: true, allowInputToggle: true});
-    $('.timepicker').datetimepicker({useCurrent: true, allowInputToggle: true});
+    $('.datepicker').datetimepicker({useCurrent: true, allowInputToggle: true, ignoreReadonly: true});
+    $('.timepicker').datetimepicker({useCurrent: true, allowInputToggle: true, ignoreReadonly: true});
 
 }
 
