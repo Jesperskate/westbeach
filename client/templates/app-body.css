@@ -155,8 +155,8 @@ font-size: 30px;
 /*    -webkit-filter: blur(2px);
     filter: blur(4px);*/
 -webkit-filter: sepia(100%);
-    -webkit-filter: contrast(100%);
-    opacity: 0.5;
+    -webkit-filter: contrast(150%);
+    opacity: 0.6;
     background-color: #00ADEF;
 
 }
