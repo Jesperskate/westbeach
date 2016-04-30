@@ -20,7 +20,7 @@ Template.rooster.events({
  
 
 
-    if (herhalen > 1 ){
+    if (herhalen > 0 ){
       // Datum in date object
       var dated = new Date(date);
 

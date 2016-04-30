@@ -10,10 +10,10 @@
     <div class="content-scrollable">
       <div class="wrapper-center">
 
-        <h1 class="title-page">Rooster.</h1>
-        <p class="intro-page" >Voeg hier nieuwe lessen aan de planning toe </p>
+        <h1 class="title-page">Rooster</h1>
+        <!-- <p class="intro-page" >Voeg hier nieuwe lessen aan de planning toe </p> -->
   
-      <h2>Nieuwe les.</h2>
+      <h2>Nieuwe les:</h2>
       <form>
         <!-- Sport -->
           <div class="form-line">
@@ -26,22 +26,16 @@
 
          <!-- Datum -->
         <div class="form-line ">
-                 <div class="input-group datepicker">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                <input class="set-due-date form-control" readonly style="cursor: default; background-color: #fff" type="text" name="date" />
-              </div>
-
-
-
- 
+          <div class="input-group datepicker">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+              <input class="set-due-date form-control" readonly style="cursor: default; background-color: #fff" type="text" name="date" />
+          </div>
         </div>
 
           <div class="form-line spinner-line">
             <span class="label-spinner">Wekelijks herhalen</span><br>
-  
-              <input  class="form-control" id='weekherhalen' name="herhalen" type="number" min="1" max="52" value="1">
-
-        </div>
+              <input  class="form-control" id='weekherhalen' name="herhalen" type="number" min="0" max="52" value="0">
+          </div>
         
         
         <!-- Level  -->
@@ -54,7 +48,7 @@
             <span class="label-spinner" id='capaciteittekst'>Capaciteit</span><br>
             <span class="spinner postionspinner">
               <span class="sub">-</span>
-              <input id="numberSpinner" name="capaciteit" type="number"  value="4">
+                <input id="numberSpinner" name="capaciteit" type="number"  value="4">
               <span class="add">+</span>
             </span>
           </div>

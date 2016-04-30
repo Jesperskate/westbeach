@@ -35,7 +35,16 @@ body{
 #showme{
 	display: none;
 }
-
+.top-btn{
+    background-color: #00ADEF;
+    color: white;
+    padding: 6px;
+    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    cursor: pointer;
+}
 .blue-btn{
 	 
     padding-left: 10px;
@@ -85,6 +94,9 @@ body{
   text-decoration: none;
 }
 /*Kleuren status lessen (stoplicht)*/
+.status:hover, .status:active, .status:visited, .status:focus{
+  color:white;
+}
 .afgelast{
     background-color: #ea2e49;
     color: white;

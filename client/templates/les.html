@@ -44,15 +44,15 @@
         </tr>
       </thead>
       <tbody>     
-      {{#if isInRole 'admin, instructeur'}}
-      {{#each aanmeldingen}}
-      {{> aanmelding}}
-      {{/each}}
-      {{else}}
-        {{#each aangemeld}}
-          {{> aanmelding}}
-        {{/each}}
-      {{/if}}   
+        {{#if isInRole 'admin, instructeur'}}
+          {{#each aanmeldingen}}
+           {{> aanmelding}}
+          {{/each}}
+        {{else}}
+          {{#each aangemeld}}
+            {{> aanmelding}}
+          {{/each}}
+        {{/if}}   
       </tbody>
       </table>
    {{/if}}
@@ -79,9 +79,5 @@
 
   
   </template>
-<!--     
-      <div class="aanmelding-row2">
-        <span>{{vraag}}</span>
-        <span>0612345678</span>
-      </div> -->
+
 

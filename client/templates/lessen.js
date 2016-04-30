@@ -1,6 +1,7 @@
 if(Meteor.isClient){
 
 Meteor.subscribe('publicAanmeldingen');
+Session.setDefault('geschiedenis', false);
 
 Template.les.helpers({
 	aangemeld: function(){
@@ -34,6 +35,12 @@ Template.golfsurfen.helpers({
 Template.home.helpers({
 	lessen: function(){
 		return Lessen.find({ 'date' : { $gte : new Date()}},{ sort: { 'date' : 1 , 'createdAt': 1} });
+	},	
+	lessenAll: function(){
+		return Lessen.find({},{ sort: { 'date' : 1 , 'createdAt': 1} });
+	},
+	geschiedenis: function(){
+		return Session.get('geschiedenis');
 	}
 
 });	
@@ -148,6 +155,26 @@ Template.aanmelding.events({
     	}    
 	 }   
   });
+
+Template.home.events({
+
+	// JV Bezig: hier een toggle maken om een andere data op te halen, een soort van filter...
+    "click .geschiedenis": function () {
+    	switch(Session.get('geschiedenis')){
+    		case true:
+    			Session.set('geschiedenis', false);
+    		break;
+    		case false:
+    			Session.set('geschiedenis', true);
+			break;
+
+    	}
+
+    	console.log(Session.get('geschiedenis'));
+	 }   
+  });
+
+
 
 Meteor.methods({
 

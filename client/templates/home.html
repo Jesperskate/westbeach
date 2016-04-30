@@ -12,13 +12,25 @@
 
           <img src="/img/westbeach-raften.png" class="img-full image-in-container">
           <span class="title-in-image">Alle lessen</span>
-          <span class="slogan-in-image">Schrijf je snel in!</span>
+          <span class="slogan-in-image">Schrijf je hier in</span>
       </div>
+           {{#if currentUser}}
+        <button class="geschiedenis top-btn">Weergeef alle lessen</button>
+        {{/if }}
       <div class="wrapper-center">  
+   
           <div class="rooster">
-          {{#each lessen}}
-             {{>les}}
-          {{/each}}
+          {{#if geschiedenis}}
+               {{#each lessenAll}}
+               {{>les}}
+            {{/each}}
+          
+            {{else}}
+            {{#each lessen}}
+               {{>les}}
+            {{/each}}
+            {{/if}}
+       
           </div>
       </div>
       <!-- <img src="/img/Kitesurf_kennismaking_Kitewest_1.png" class="img-full"> -->
