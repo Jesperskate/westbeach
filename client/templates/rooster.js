@@ -3,11 +3,12 @@ Meteor.subscribe('publicLessen');
 Template.rooster.events({
   'submit': function(event, template) {
     event.preventDefault();
-    var sport = event.target.sport.value;
+    // var sport = event.target.sport.value;
+
+    var sport = template.find('input:radio[name=sport]:checked').value;
     var date = new Date(event.target.date.value);
 
     var datestring = String(date);
-
 
     // Starttijd wordt uit date format gehaald, wel in US format!(AM/PM)
     var starttime = datestring.slice(15,21);
@@ -17,14 +18,9 @@ Template.rooster.events({
     var info = event.target.info.value;
     var capaciteit = event.target.capaciteit.value;
 
- 
-
-
     if (herhalen > 0 ){
       // Datum in date object
       var dated = new Date(date);
-
-
       for (var i = 1; i <= herhalen ; i++) {
         // add week or more PUINHOOP
         var dagentoevoegen = i * 7;
@@ -45,10 +41,7 @@ Template.rooster.events({
           });
         console.log(i + ' week toegevoegd ');        
       };
-  
-
     }
-
 
       Lessen.insert({
         sport: sport,
@@ -61,14 +54,12 @@ Template.rooster.events({
         createdAt: new Date() // current time
       });
 
-
       event.target.sport.value = "";
       event.target.date.value = "";
       event.target.level.value = "";
       event.target.info.value = "";
 
       Router.go(sport);
-
   },
 
   // Teller functie veld
