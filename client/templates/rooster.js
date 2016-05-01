@@ -7,13 +7,11 @@ Template.rooster.events({
 
     var sport = template.find('input:radio[name=sport]:checked').value;
     var date = new Date(event.target.date.value);
-
     var datestring = String(date);
 
     // Starttijd wordt uit date format gehaald, wel in US format!(AM/PM)
     var starttime = datestring.slice(15,21);
     var herhalen = event.target.herhalen.value;
-
     var level = event.target.level.value;
     var info = event.target.info.value;
     var capaciteit = event.target.capaciteit.value;
