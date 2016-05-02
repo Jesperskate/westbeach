@@ -35,7 +35,6 @@ Template.rooster.events({
       // Datum in date object
       var dated = new Date(date);
       for (var i = 1; i <= herhalen ; i++) {
-        // add week or more PUINHOOP
         var dagentoevoegen = i * 7;
         var nextweek = moment(dated).add(dagentoevoegen, 'days');
         console.log('Handig om te zien: '+nextweek);
@@ -93,7 +92,7 @@ Template.rooster.events({
 
 Template.rooster.rendered = function() {
   // format dat heb ik verwijderd omdat het toeveoegn van 7 dagen bijv. makkelijker gaat met de default format
-    $('.datepicker').datetimepicker({useCurrent: true, allowInputToggle: true, ignoreReadonly: true, format: 'DD-MM-YYYY HH:mm'});
+    $('.datepicker').datetimepicker({useCurrent: true, allowInputToggle: true, ignoreReadonly: true, format: 'DD-MM-YYYY 10:00'});
     // $('.timepicker').datetimepicker({useCurrent: true, allowInputToggle: true, ignoreReadonly: true});
 
 }
