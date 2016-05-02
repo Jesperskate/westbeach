@@ -6,11 +6,26 @@ Template.rooster.events({
     // var sport = event.target.sport.value;
 
     var sport = template.find('input:radio[name=sport]:checked').value;
-    var date = new Date(event.target.date.value);
-    var datestring = String(date);
+    // Validatie inactief
+    // if (sport == null){
+    //   console.log('Sportkeuze is vereist');
+    //     $('#Sportkeuze').css('border', '1px solid red'); 
+    //     return false;
+    // }
+    var datestring = event.target.date.value;
+      console.log('Date from value '+event.target.date.value);
+    var YYYY = datestring.slice(6,10);
+    var MM = datestring.slice(3,5);
+    var dd = datestring.slice(0,2);
+    var hh = datestring.slice(11,13);
+    var mm = datestring.slice(14,16);
+    // Maand nummer begint op 0 (0 = januari)
+    var MMcorrect = MM - 1;
+    var date = new Date(YYYY,MMcorrect,dd,hh,mm,00,00);
+    console.log('Date in dateformat: '+date);
 
-    // Starttijd wordt uit date format gehaald, wel in US format!(AM/PM)
-    var starttime = datestring.slice(15,21);
+    var starttime = datestring.slice(11,16);
+    console.log('Starttijd: '+starttime);
     var herhalen = event.target.herhalen.value;
     var level = event.target.level.value;
     var info = event.target.info.value;
@@ -25,8 +40,6 @@ Template.rooster.events({
         var nextweek = moment(dated).add(dagentoevoegen, 'days');
         console.log('Handig om te zien: '+nextweek);
         var d = new Date(nextweek);
-
-
           Lessen.insert({
             sport: sport,
             date: d,
