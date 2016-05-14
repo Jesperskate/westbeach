@@ -44,11 +44,14 @@
           <a href="{{pathFor 'contact'}}">
             <img src="/img/contact-icon.png" class="small-icon-menu">Contact</a>
         
-       
+       {{#if userMenuOpen}}
+
+       {{else}}
             <span class="menu-footer-text">
               <!-- <a href="http://www.westbeach.nl/">WESTBEACH site</a> -->
         <a href="http://atlantit.com" target="_blank">Built by Atlantit</a>
         </span>
+        {{/if}}
       </div>
     </section>
 

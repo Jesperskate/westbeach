@@ -29,6 +29,9 @@ body{
   color: #32B4F7;
 
 }
+tbody{
+  font-size: 90% !important;
+}
 .table-striped th{
   font-weight: 600;
 }
@@ -60,6 +63,10 @@ body{
 }
 .delete,.deleteAanmelding{
   cursor: pointer;
+
+}
+.delete{
+    background-color: #ea2e49!important;
 }
 .delete:hover, .deleteAanmelding:hover{
   color: red;
