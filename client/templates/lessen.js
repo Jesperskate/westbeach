@@ -19,8 +19,13 @@ Template.kitesurfen.helpers({
 	lessen: function(){
 // Om lessen op de juiste datum volgorde te zetten, moet eerst de input naar 'date' worden veranderd
 		// van dd/mm/jjjj naar een js date()... want nu pakt het alleen de dag en niet de maand.
+		// currenttime 8 uur terug
+		var d = new Date();
+		var d2 = new Date();
+		d2.setHours(d.getHours() - 8);
+	
 		
-		return Lessen.find({sport:'kitesurfen', 'date' : { $gte : new Date()}}, { sort: { 'date' : 1 , 'createdAt': 1} });
+		return Lessen.find({sport:'kitesurfen', 'date' : { $gte : d2}}, { sort: { 'date' : 1 , 'createdAt': 1} });
 	}
 
 });
@@ -28,13 +33,21 @@ Template.kitesurfen.helpers({
 //code for golfsurfen
 Template.golfsurfen.helpers({
 	lessen: function(){
-		return Lessen.find({sport:'golfsurfen', 'date' : { $gte : new Date()}}, { sort: { 'date' : 1 , 'createdAt': 1} });
+				// currenttime 8 uur terug
+		var d = new Date();
+		var d2 = new Date();
+		d2.setHours(d.getHours() - 8);
+		return Lessen.find({sport:'golfsurfen', 'date' : { $gte : d2}}, { sort: { 'date' : 1 , 'createdAt': 1} });
 	}
 
 });	
 Template.home.helpers({
 	lessen: function(){
-		return Lessen.find({ 'date' : { $gte : new Date()}},{ sort: { 'date' : 1 , 'createdAt': 1} });
+				// currenttime 8 uur terug
+		var d = new Date();
+		var d2 = new Date();
+		d2.setHours(d.getHours() - 8);
+		return Lessen.find({ 'date' : { $gte : d2}},{ sort: { 'date' : 1 , 'createdAt': 1} });
 	},	
 	lessenAll: function(){
 		return Lessen.find({},{ sort: { 'date' : 1 , 'createdAt': 1} });
@@ -46,7 +59,11 @@ Template.home.helpers({
 });	
 Template.bootcamp.helpers({
 	lessen: function(){
-		return Lessen.find({sport:'bootcamp', 'date' : { $gte : new Date()}},{ sort: { 'date' : 1 , 'createdAt': 1} });
+		// currenttime 8 uur terug
+		var d = new Date();
+		var d2 = new Date();
+		d2.setHours(d.getHours() - 8);
+		return Lessen.find({sport:'bootcamp', 'date' : { $gte : d2}},{ sort: { 'date' : 1 , 'createdAt': 1} });
 	}
 
 });
@@ -55,7 +72,11 @@ Template.bootcamp.helpers({
 //code for golfsurfen
 Template.yoga.helpers({
 	lessen: function(){
-		return Lessen.find({sport:'yoga', 'date' : { $gte : new Date()}}, { sort: { 'date' : 1 , 'createdAt': 1} });
+		// currenttime 8 uur terug
+		var d = new Date();
+		var d2 = new Date();
+		d2.setHours(d.getHours() - 8);
+		return Lessen.find({sport:'yoga', 'date' : { $gte : d2 }}, { sort: { 'date' : 1 , 'createdAt': 1} });
 	}
 
 });
