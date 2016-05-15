@@ -119,7 +119,7 @@ Template.les.helpers({
 
 Template.les.events({
 	"click .delete": function () {
-		if(confirm('Weet u zeker dat u deze les '+this.sport+' om'+this.starttime+'wilt verwijderen?')){
+		if(confirm('Weet u zeker dat u deze les '+this.sport+' om'+this.starttime+' wilt verwijderen?')){
 			Lessen.remove(this._id);
 		}
 		
