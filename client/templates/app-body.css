@@ -35,7 +35,7 @@ body{
   }
 }
 
-.table-striped th{
+.table-hover th{
   font-weight: 600;
 }
 #showme{
@@ -130,9 +130,11 @@ body{
   float: left;
 
 }
+
 .date-blue #number{
 font-size: 30px;
 }
+
 .date-blue #month{
     letter-spacing: .3em;
     text-indent: .3em;
@@ -196,18 +198,18 @@ font-size: 30px;
 }
 
 #adminknoppen{
-  margin-top: 35px; 
+  margin-top: 20px; 
   margin-bottom: 20px;
 }
 #adminknoppen .btn{
   margin-bottom: 5px;
-  font-size: 11px;
+  font-size: 12px;
 }
 #info-box{
   text-align: left; 
   color: black; 
   margin-bottom: 5px;
-  margin-left: 10px;
+  margin-left: 5px;
   margin-top: 15px; 
 }
 #tabelaanmelding{
@@ -234,6 +236,17 @@ font-size: 30px;
 }
 .table{
   text-align: left; 
+}
+
+.telEnVraag{
+  display: none; 
+  font-size: 90%; 
+}
+ tr.aanmelding-row{
+  font-weight: bold; 
+}
+.vraag{
+  font-size: 90%;
 }
 
 @media screen and (max-width: 820px) {

@@ -34,13 +34,13 @@
       <button class="delete btn" id="custombtn">Verwijder</button>
       </div>
           {{/if}}
-      <table id="tabelaanmelding" class="table table-striped">
+      <table id="tabelaanmelding" class="table">
       <thead>
         <tr>
           <th>Naam</th>
-          <th>Email</th>
+<!--           <th>Email</th> -->
           <th>Leeftijd</th>
-          <th></th>
+          <th>Afmelden</th>
         </tr>
       </thead>
       <tbody>     
@@ -60,14 +60,22 @@
   </template>
     
 <template name="aanmelding">
-      <tr class="aanmelding-row">
+    <tr class="aanmelding-row">
         <td>{{naam}}</td>
-        <!-- <td>{{telefoon}}</td> -->
-        <td colspan="2" >{{leeftijd}}</td>
-        <td class="deleteAanmelding">X</td>
+        <td>{{leeftijd}}</td>
+        <td colspan="2" class="deleteAanmelding">X</td>
+    </tr>
+    <tr class="telEnVraag">
+      <td>
+        <div class="telbox">{{telefoon}}</div>
+      </td>
+      <td colspan="2">{{email}}</td>
+    </tr>
+    <tr class="vraag">
+      <td colspan="4">{{vraag}}</td>
     </tr>
 
-    <tr class="telEnVraag">
+    <!-- <tr class="telEnVraag">
       <td colspan="2">
       <div class="telbox">{{telefoon}}</div>
     </td>
@@ -76,7 +84,7 @@
       </td>
       
       <div class="vraagbox" >{{vraag}} </div> 
-    </tr>
+    </tr> -->
 
 
   
