@@ -7,7 +7,8 @@ if(Meteor.isServer) {
 
 Meteor.startup(function () {
     // hmmm dit zorgt voor de internal server error bij reset password... 
-   process.env.MAIL_URL="smtp://westbeachapp%40gmail.com:Strand123@smtp.gmail.com:465/";  
+    // oude port 465
+   process.env.MAIL_URL="smtp://westbeachapp%40gmail.com:Strand123@smtp.gmail.com:25/";  
 
    // eerst 
 });
