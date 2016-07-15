@@ -7,6 +7,11 @@ body{
 .contact-box{
   margin-top: 20px;
 }
+.gaatDoorBalk{
+  height: 5px;
+  background-color: #a7c520;
+  width: 100%;
+}
 
 .box1{
   float:left;
